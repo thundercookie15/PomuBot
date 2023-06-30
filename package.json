@@ -1,0 +1,59 @@
+{
+  "name": "luna_translations_bot",
+  "version": "3",
+  "description": "Bot for the Hololive community processing all Hololive YouTube livechats.",
+  "main": "build/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "typedoc": "typedoc"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "tam <m.tam.carre@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^1.6.3",
+    "@discordjs/rest": "^1.7.1",
+    "@typegoose/typegoose": "^11.1.0",
+    "@types/common-tags": "^1.8.1",
+    "@types/node-fetch": "^2.6.3",
+    "@types/ramda": "^0.29.1",
+    "@types/ws": "^8.5.4",
+    "better-sqlite3": "^8.3.0",
+    "buffer-from": "^1.1.2",
+    "chalk": "^4.0.0",
+    "common-tags": "^1.8.2",
+    "cross-spawn": "^7.0.3",
+    "discord-api-types": "^0.37.42",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3",
+    "enmap": "^5.9.5",
+    "fp-ts": "^2.15.0",
+    "googleapis": "^118.0.0",
+    "immutable": "^4.3.0",
+    "inquirer": "^9.2.2",
+    "masterchat": "^1.1.0",
+    "mongoose": "^7.1.0",
+    "node-fetch": "^2.6.6",
+    "node-oom-heapdump": "^3.0.1",
+    "node-worker-threads-pool": "^1.5.1",
+    "piscina": "^3.2.0",
+    "ramda": "^0.29.0",
+    "socket.io-client": "^4.6.1",
+    "ts-deepmerge": "^6.0.3",
+    "ts-toolbelt": "^9.6.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/buffer-from": "^1.1.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.1.1",
+    "mongodb-memory-server": "^8.12.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
