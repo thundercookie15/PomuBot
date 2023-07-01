@@ -1,7 +1,7 @@
 import {google} from "googleapis";
 import {log} from "./logging";
 
-const youtube = google.youtube({version: "v3", auth: ''});
+const youtube = google.youtube({version: "v3", auth: 'YOUTUBE_API_KEY'});
 
 export async function getUsernameFromId(id: string) {
   // @ts-ignore
