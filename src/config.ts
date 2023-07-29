@@ -4,8 +4,8 @@ import {isGuildOwner, isBotOwner, hasKickPerms, isBotDev} from './helpers/discor
 
 export const config: LunaBotConfig = {
   deeplKey: process.env.DEEPL_KEY,
-  ownerId: '170628791129997313',
-  devId: '237015981015171072',
+  ownerId: '237015981015171072',
+  devId: '170628791129997313',
   permLevels: [
     {level: 0, name: 'User', check: () => true},
     {level: 1, name: 'Blacklister', check: isBlacklister},
