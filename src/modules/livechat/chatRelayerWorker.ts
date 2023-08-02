@@ -125,7 +125,7 @@ export async function processComments(
       const streamer = streamersMap.get(frame.channel.id)
       const author = streamersMap.get(cmt.id)
       const isCameo = isStreamer_ && !cmt.isOwner
-      const mustDeepL = isStreamer_ && !isHoloID(streamer)
+      const mustDeepL = isStreamer_ && !isHoloID(streamer) || cmt.isMod
       const deepLTl = mustDeepL ? await tl(cmt.body, 'EN') : undefined
       const mustShowTl = mustDeepL && deepLTl !== cmt.body
       const maybeGossip = isStreamer_ || isTl_
