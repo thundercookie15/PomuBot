@@ -13,8 +13,9 @@ import {nijisanji_kr} from './nijisanji kr'
 import {IdolComp} from './IdolComp'
 import {vshojo} from './vshojo'
 import {phase_connect} from './phaseconnect'
+import {prism_project} from "./prismproject";
 
-export const streamers = StreamerArray([...nijisanji, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...phase_connect, ...vshojo] as const)
+export const streamers = StreamerArray([...nijisanji, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...phase_connect, ...prism_project, ...vshojo] as const)
 
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
