@@ -20,16 +20,6 @@ export const indies = [
     aliases: ['Pochi', 'Iida', 'Iida Pochi',],
   },
   {
-    name: 'ironmouse',
-    ytId: 'UChgPVLjqugDQpRLWvC7zzig',
-    chName: 'ironmouse ',
-    picture:
-      'https://yt3.googleusercontent.com/ytc/AMLnZu9QvWI_A37fkAlx5d9sxG9_p185qeFnx3ly9kCz8g=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['VShojo'],
-    twitter: 'ironmouse',
-    aliases: ['ironmouse'],
-  },
-  {
     name: 'Nyatasha Nyanners',
     ytId: 'UCO5Jvsc_sKuZi3MhnJxrlzQ',
     chName: 'Nyanners',
@@ -39,16 +29,7 @@ export const indies = [
     twitter: 'NyanNyanners',
     aliases: ['Nyanners', 'Nyan', 'Nyatasha']
   },
-  {
-    name: 'Projekt Melody',
-    ytId: 'UC1yoRdFoFJaCY-AGfD9W0wQ',
-    chName: 'CDawgVA',
-    picture:
-      'https://yt3.googleusercontent.com/ytc/AMLnZu87h-8ATKPpWMXDeWzAJ8h00l2Bx4inlIn9ChMy=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['VShojo'],
-    twitter: 'ProjektMelody',
-    aliases: ['Projekt Melody', 'Melody'],
-  },
+
   {
     name: 'Silvervale',
     ytId: 'UCm8Dj7dQ0oRHXNUXF31kjEw',
@@ -58,16 +39,6 @@ export const indies = [
     groups: ['indies'],
     twitter: '_Silvervale_',
     aliases: ['Silvervale',],
-  },
-  {
-    name: 'Zentreya',
-    ytId: 'UCVLsPBwDtv7n7FZLiOsvhSQ',
-    chName: 'Zentreya',
-    picture:
-      'https://yt3.ggpht.com/-jDrfrdnaO7-aa9a9ZVn-B9bb90WxZgskybFN6EyWeuoEHfyoz9WTF7HdGhumRhmCokgwJsa-w=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['VShojo'],
-    twitter: 'zentreya',
-    aliases: ['Zentreya',],
   },
   {
     name: 'LeeandLie',
@@ -118,16 +89,6 @@ export const indies = [
     groups: ['indies'],
     twitter: 'shxtou',
     aliases: ['Shoto',],
-  },
-  {
-    name: 'Froot',
-    ytId: 'UCtNeQ8cUwvAAhBbVbwfGWpg',
-    chName: 'Apricot the Lich',
-    picture:
-      'https://yt3.ggpht.com/u5SnyjaXLD5oqp0CuNGZjvKxMnaPlqAwoxArSZupSORSaSyRYV2PQALnJbz8ROE9J0piY-8ls9E=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['VShojo'],
-    twitter: 'LichVtuber',
-    aliases: ['Apricot the Lich', 'Froot'],
   },
   {
     name: 'Haruka Karibu',
