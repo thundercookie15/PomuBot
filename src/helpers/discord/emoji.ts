@@ -9,6 +9,8 @@ export const emoji: Record<Name, EmojiCode> = {
   tc: '<:TwitCasting:1009722538080882760>',
   yt: '<:YouTube:1009722198073815122>',
   peek: '<:PomuPeek:1009721716295090206>',
+  phaseconnect: '<:PhaseConnect:1136302945810526290>',
+  prism: '<:Prism:1136303642346016891>',
   niji: '<:nijisanji:1009718487364673566>',
   nijien: '<:NijiEN:1096841263317254315>',
   idol: '<:Idol:1097457745428480030>',
