@@ -65,7 +65,10 @@ export const notificationCommand = (opts: NotificationCommand) =>
     .addSubcommand((subcommand) =>
       subcommand
         .setName('clear')
-        .setDescription(`Clear all channels from which to notify ${opts.subject}`),
+        .setDescription(`Clear all channels from which to notify ${opts.subject}`)
+        .addChannelOption((option) =>
+          option.setName('textchannel').setDescription('The channel to clear in.'),
+        ),
     )
     .addSubcommand((subcommand) =>
       subcommand

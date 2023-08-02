@@ -17,6 +17,7 @@ export function validateInputAndModifyEntryList({
                                                   intr,
                                                   verb,
                                                   streamer,
+                                                  channel,
                                                   role,
                                                   feature,
                                                   add,
@@ -31,7 +32,7 @@ export function validateInputAndModifyEntryList({
       ? replyStreamerList
       : modifyEntryList
 
-  modifyIfValid({g, intr, feature, role, add, remove, verb, streamer: validatedStreamer!})
+  modifyIfValid({g, intr, feature, channel, role, add, remove, verb, streamer: validatedStreamer!})
 }
 
 export function getSubbedGuilds(
@@ -187,7 +188,30 @@ function notifyNotFound({intr, remove, g, feature}: ValidatedOptions): void {
   )
 }
 
-async function clearEntries({feature, intr}: ValidatedOptions): Promise<void> {
+async function clearEntries({feature, intr, channel}: ValidatedOptions): Promise<void> {
+  if (channel) {
+    const g = getSettings(intr.guild!)
+    const newEntries = g[feature].filter((r) => r.discordCh !== channel)
+
+    updateSettings(intr, {[feature]: newEntries})
+    reply(
+      intr,
+      createEmbed(
+        {
+          fields: [
+            {
+              name: 'Cleared Channel Relays',
+              value: `<#${channel}>`,
+              inline: false,
+            },
+            ...getEntryFields(newEntries),
+          ],
+        },
+        false,
+      ),
+    )
+    return
+  }
   updateSettings(intr, {[feature]: []})
   reply(intr, createEmbedMessage(`Cleared all entries for ${feature}.`))
 }
@@ -220,6 +244,7 @@ interface WatchFeatureModifyOptions {
   intr: CommandInteraction
   verb: 'add' | 'remove' | 'clear' | 'viewcurrent'
   streamer: string
+  channel?: Snowflake
   role?: Snowflake
   feature: WatchFeature
   add: AttemptResultMessages

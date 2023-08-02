@@ -22,6 +22,7 @@ export const relay: Command = {
       intr,
       verb: intr.options.getSubcommand(true) as 'add' | 'remove' | 'clear' | 'viewcurrent',
       streamer,
+      channel: intr.options.getChannel('textchannel')?.id,
       role: intr.options.getRole('role')?.id,
       feature: 'relay',
       add: {
