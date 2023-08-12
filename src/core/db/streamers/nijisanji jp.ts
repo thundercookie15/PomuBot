@@ -998,7 +998,7 @@ export const nijisanji_jp = [
       'https://yt3.ggpht.com/H0CnxuCVqCtqcWq7i9LmkmHCXKopCpwD6TFtIsGsY3bLXf1_jmmsWM3gskGyu--2JVbHWPGURA=s88-c-k-c0x00ffffff-no-rj',
     groups: ['Nijisanji', 'Nijisanji JP'],
     twitter: 'oliverD_23',
-    aliases: ['Oliver', 'Evans', 'Oliver Evans', 'オリバー・エバンス', 'にじさんじ'],
+    aliases: ['Oliver', 'Evans', 'Oliver Evans', 'オリバー・エバンス'],
   },
   {
     name: 'Lain Paterson',
@@ -1118,6 +1118,6 @@ export const nijisanji_jp = [
       'https://yt3.ggpht.com/ytc/AMLnZu9bcxvdJLIwCL2qSYCIcDNmtb-HheBY10dAhuvRCg=s88-c-k-c0x00ffffff-no-rj',
     groups: ['Nijisanji', 'Nijisanji JP'],
     twitter: 'nijisanji_app',
-    aliases: ['Nijisanji', 'にじさんじ',],
+    aliases: ['Nijisanji', 'Nijisanji JP Official', 'にじさんじ',],
   },
 ] as const
