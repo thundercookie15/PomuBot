@@ -20,6 +20,16 @@ export const vshojo= [
     aliases: ['Projekt Melody', 'Melody'],
   },
   {
+    name: 'Haruka Karibu',
+    ytId: 'UCsk_mKQyv_xdhahUBqoVhcg',
+    chName: 'Haruka Karibu',
+    picture:
+      'https://yt3.googleusercontent.com/ytc/AGIKgqOxrsblVr1gmY4Nw8huY-v_Ptx18DC2gdyvjP7Lew=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['VShojo'],
+    twitter: 'haruka_karibu',
+    aliases: ['Haruka', 'How To Car']
+  },
+  {
     name: 'Zentreya',
     ytId: 'UCVLsPBwDtv7n7FZLiOsvhSQ',
     chName: 'Zentreya',
