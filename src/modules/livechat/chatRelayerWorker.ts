@@ -199,14 +199,13 @@ function relayCameo({
   const camEmj = getAgencyEmote(groups)
   const emj = isGossip ? emoji.peek : camEmj
   const mustTl = deepLTl && g.deepl
-  const line1 = `${emj} **${cmt.name}** in **${to}**'s chat: \`${cleaned}\``
+  const line1 = `${emj} **${cmt.name}** in [**${to}**'s chat](<https://youtu.be/${frame.id}>): \`${cleaned}\``
   const line2 = mustTl ? `\n${emoji.deepl}**DeepL:** \`${deepLTl}\`` : ''
-  const line3 = `\n<https://youtu.be/${frame.id}>`
   const mustPost = !isBlacklistedOrUnwanted(cmt, g, bl)
   return mustPost ? {
     _tag: 'SendMessageTask',
     cid: discordCh,
-    content: line1 + line2 + line3,
+    content: line1 + line2,
     tlRelay: false,
     vId: frame.id,
     g: g,
@@ -280,7 +279,7 @@ function extracted(cmt: ChatComment, isATl: boolean, deepLTl: string | undefined
   const vemoji = getAgencyEmote(groups)
   const premoji = isATl ? ':speech_balloon:' : isStreamer(cmt.id) ? vemoji : ':tools:'
 
-  const url = deepLTl ? (cmt.isOwner ? "" : `${g.relay.length > 1 ? `\n**Chat:** ${frame.channel.name}` : ''}`) : (cmt.isOwner ? "" : `${g.relay.length > 1 ? `\n**Chat:** ${frame.channel.name}` : ''}`)
+  const url = deepLTl ? (cmt.isOwner ? "" : `${g.relay.length > 1 ? `\n**Chat:** [${frame.channel.name}](<https://youtu.be/${frame.id}>)` : ''}`) : (cmt.isOwner ? "" : `${g.relay.length > 1 ? `\n**Chat:** [${frame.channel.name}](<https://youtu.be/${frame.id}>)` : ''}`)
 
   const author = isATl ? `||${cmt.name}:||` : `**${cmt.name}:**`
   const text = cmt.body.replaceAll('`', "''")
