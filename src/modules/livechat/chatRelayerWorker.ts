@@ -6,8 +6,8 @@ import {Snowflake} from 'discord.js'
 import {tl} from '../deepl'
 import {isBlacklistedOrUnwanted, isHoloID, isStreamer, isTl} from './commentBooleans'
 import {GuildSettings, WatchFeatureSettings} from '../../core/db/models'
-import {ChatComment, Entries, Blacklist} from './chatRelayer'
-import {AddChatItemAction, runsToString, MasterchatError, Masterchat} from 'masterchat'
+import {Blacklist, ChatComment, Entries} from './chatRelayer'
+import {AddChatItemAction, Masterchat, MasterchatError, runsToString} from 'masterchat'
 
 export default (input: ChatWorkerInput): void => {
   allEntries = input.allEntries
@@ -311,7 +311,7 @@ function getAgencyEmote(groups: string[] | undefined): string {
         groups?.includes('Idol') ? emoji.idol :
           groups?.includes('VShojo') ? emoji.vshojo :
             groups?.includes('Phase Connect') ? emoji.phaseconnect :
-              groups?.includes('PRISM Project') ?  emoji.prism: emoji.Speaker
+              groups?.includes('PRISM Project') ? emoji.prism : emoji.Speaker
 }
 
 interface RelayData {
