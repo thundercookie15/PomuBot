@@ -91,16 +91,6 @@ export const indies = [
     aliases: ['Shoto',],
   },
   {
-    name: 'Haruka Karibu',
-    ytId: 'UCsk_mKQyv_xdhahUBqoVhcg',
-    chName: 'Haruka Karibu',
-    picture:
-      'https://yt3.googleusercontent.com/ytc/AGIKgqOxrsblVr1gmY4Nw8huY-v_Ptx18DC2gdyvjP7Lew=s176-c-k-c0x00ffffff-no-rj',
-    groups: ['VShojo'],
-    twitter: 'haruka_karibu',
-    aliases: ['Haruka', 'How To Car']
-  },
-  {
     name: 'Crunchyroll Hime',
     ytId: 'UCWRgyZ7sllnMwli-9IeouTQ',
     chName: 'Crunchyroll-Hime Ch.',
