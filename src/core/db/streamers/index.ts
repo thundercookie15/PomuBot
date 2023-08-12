@@ -1,5 +1,5 @@
 /** @file Exports main streamer list and streamer-related utility functions */
-import {CommandInteraction} from 'discord.js'
+import {CommandInteraction, Message} from 'discord.js'
 import {ciEquals} from '../../../helpers'
 import {createEmbed, reply} from '../../../helpers/discord'
 import {YouTubeChannelId} from '../../../modules/holodex/frames'
@@ -16,7 +16,7 @@ import {phase_connect} from './phaseconnect'
 import {prism_project} from "./prismproject";
 
 export const streamers = StreamerArray([...nijisanji, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...phase_connect, ...prism_project, ...vshojo] as const)
-export const streamerGroups = ['hololive', 'nijisanji', 'nijisanji_id', 'nijisanji_kr', 'nijisanji_jp', 'indies', 'Idol', 'vshojo', 'phase_connect', 'prism_project'] as const
+
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
@@ -28,11 +28,8 @@ export const twitters = streamers.map((x) => x.twitter)
 export type StreamerName = typeof names[number] | 'all'
 export type StreamerTwitter = typeof twitters[number]
 
-export function getStreamerList(group: string): string {
-  return streamers
-    .filter((s) => group in s.groups)
-    .map((s) => s.name)
-    .join(', ')
+export function getStreamerList(): string {
+  return streamers.map((streamer) => streamer.name).join(', ')
 }
 
 export function findStreamerName(name: string): StreamerName | undefined {
@@ -55,8 +52,8 @@ export function replyStreamerList(x: CommandInteraction | ValidatedOptions): voi
   reply(
     msg,
     createEmbed({
-      title: 'Supported Streamer Groups',
-      description: streamerGroups.join('\n'),
+      title: 'Supported channels',
+      description: getStreamerList(),
     }),
   )
 }
