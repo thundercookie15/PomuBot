@@ -6,17 +6,18 @@ import {YouTubeChannelId} from '../../../modules/holodex/frames'
 import {ValidatedOptions} from '../functions'
 import {hololive} from './hololive'
 import {indies} from './indies'
-import {nijisanji} from './nijisanji'
-import {nijisanji_id} from './nijisanji id'
-import {nijisanji_jp} from './nijisanji jp'
-import {nijisanji_kr} from './nijisanji kr'
+import {nijisanji_en} from './nijisanjiEN'
+import {nijisanji_id} from './nijisanjiID'
+import {nijisanji_jp} from './nijisanjiJP'
+import {nijisanji_kr} from './nijisanjiKR'
 import {IdolComp} from './IdolComp'
 import {vshojo} from './vshojo'
 import {phase_connect} from './phaseconnect'
 import {prism_project} from "./prismproject";
+import {official_channels} from "./officialChannels";
 
-export const streamers = StreamerArray([...nijisanji, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...phase_connect, ...prism_project, ...vshojo] as const)
-export const streamerGroups = ['Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'VShojo', 'Phase Connect', 'Prism Project'] as const
+export const streamers = StreamerArray([...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo] as const)
+export const streamerGroups = ['Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'Official Channels', 'VShojo', 'Phase Connect', 'Prism Project'] as const
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
@@ -24,13 +25,14 @@ export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
 // TODO make this pretty
 function getStreamerArrayByGroup(group: string) {
   if (group === 'Hololive') return hololive
-  if (group === 'Nijisanji') return [nijisanji, nijisanji_id, nijisanji_jp, nijisanji_kr].flat()
-  if (group === 'Nijisanji EN') return nijisanji
+  if (group === 'Nijisanji') return [nijisanji_en, nijisanji_id, nijisanji_jp, nijisanji_kr].flat()
+  if (group === 'Nijisanji EN') return nijisanji_en
   if (group === 'Nijisanji ID') return nijisanji_id
   if (group === 'Nijisanji KR') return nijisanji_kr
   if (group === 'Nijisanji JP') return nijisanji_jp
   if (group === 'Independent') return indies
   if (group === 'Idol') return IdolComp
+  if (group === 'Official Channels') return official_channels
   if (group === 'VShojo') return vshojo
   if (group === 'Phase Connect') return phase_connect
   if (group === 'Prism Project') return prism_project

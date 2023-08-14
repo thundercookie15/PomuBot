@@ -1,4 +1,4 @@
-export const nijisanji = [
+export const nijisanji_en = [
   {
     name: 'Pomu Rainpuff',
     ytId: 'UCP4nMSTdwU1KqYWu3UH5DHQ',
@@ -248,16 +248,6 @@ export const nijisanji = [
     groups: ['Nijisanji', 'Nijisanji EN'],
     twitter: 'RenZott0',
     aliases: ['Ren', 'Zotto', 'Ren Zotto'],
-  },
-  {
-    name: 'NIJISANJI EN Official',
-    ytId: 'UC-JSeFfovhNsEhftt1WHMvg',
-    chName: 'NIJISANJI EN Official',
-    picture:
-      'https://yt3.ggpht.com/Kxrb38fp7HMTvGPBnX2D2SqVNwdlgcva7hn12THBbEaR9_mUBKH7y_yWXFfYJ1TMiQWX6iSV=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['Nijisanji', 'Nijisanji EN'],
-    twitter: 'NIJISANJI_World',
-    aliases: ['Nijisanji EN',],
   },
   {
     name: 'Doppio Dropscythe',

@@ -219,26 +219,6 @@ export const hololive = [
     aliases: ['lamy', 'らみ', 'ラミィ'],
   },
   {
-    name: 'Hololive VTuber Group',
-    ytId: 'UCJFZiqLMntJufDCHc6bQixg',
-    chName: 'hololive ホロライブ - VTuber Group',
-    picture:
-      'https://yt3.ggpht.com/ytc/AAUvwngST9tdspZgipxxe6KUzq_t-CkbVhCjkmnWxb1uZw=s800-c-k-c0x00ffffff-no-rj',
-    groups: ['Hololive'],
-    twitter: 'hololivetv',
-    aliases: [],
-  },
-  {
-    name: 'Hololive Indonesia',
-    ytId: 'UCfrWoRGlawPQDQxxeIDRP0Q',
-    chName: 'hololive Indonesia',
-    picture:
-      'https://yt3.ggpht.com/ytc/AAUvwnh523hdzQe8vPD2Du77mqxianT1HHR1McSLHXK4=s800-c-k-c0x00ffffff-no-rj',
-    groups: ['Group channel', 'Hololive'],
-    twitter: 'hololive_id',
-    aliases: [],
-  },
-  {
     name: 'Aki Rosenthal',
     ytId: 'UCFTLzh12_nrtzqBPsTCqenA',
     chName: 'アキロゼCh。Vtuber/ホロライブ所属',
@@ -379,16 +359,6 @@ export const hololive = [
     aliases: ['gura'],
   },
   {
-    name: 'Hololive English',
-    ytId: 'UCotXwY6s8pWmuWd_snKYjhg',
-    chName: 'hololive English',
-    picture:
-      'https://yt3.ggpht.com/ytc/AAUvwnieM4gqtwmRtapt0va5VTi7BiKHhsYMxOu9qYRR=s800-c-k-c0x00ffffff-no-rj',
-    groups: ['Group channel', 'Hololive'],
-    twitter: 'hololive_En',
-    aliases: [],
-  },
-  {
     name: 'Ayunda Risu',
     ytId: 'UCOyYb1c43VlX9rc_lT6NKQw',
     chName: 'Ayunda Risu Ch. hololive-ID',
@@ -497,16 +467,6 @@ export const hololive = [
     groups: ['Holostars 3rd Gen', 'Hololive'],
     twitter: 'aragamioga',
     aliases: ['oga'],
-  },
-  {
-    name: 'Holostars Official',
-    ytId: 'UCWsfcksUUpoEvhia0_ut0bA',
-    chName: 'holostars ホロスターズ - VTuber Group',
-    picture:
-      'https://yt3.ggpht.com/ytc/AAUvwnjwFEptYg7ed7Ze1nWT7Bj4bbXiOoNwzeM9-4g=s800-c-k-c0x00ffffff-no-rj',
-    groups: ['0th Generation', 'Hololive'],
-    twitter: 'holostarstv',
-    aliases: [],
   },
   {
     name: 'Murasaki Shion',

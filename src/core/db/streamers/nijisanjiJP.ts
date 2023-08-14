@@ -1110,14 +1110,4 @@ export const nijisanji_jp = [
     twitter: 'ZulmIhP1nlMOT5y',
     aliases: ['花畑チャイカ', 'Hanabatake Chaika', 'Chaika', 'Hanabatake'],
   },
-  {
-    name: 'Nijisanji',
-    ytId: 'nijisanji',
-    chName: 'にじさんじ ',
-    picture:
-      'https://yt3.ggpht.com/ytc/AMLnZu9bcxvdJLIwCL2qSYCIcDNmtb-HheBY10dAhuvRCg=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['Nijisanji', 'Nijisanji JP'],
-    twitter: 'nijisanji_app',
-    aliases: ['Nijisanji', 'Nijisanji JP Official', 'にじさんじ',],
-  },
 ] as const

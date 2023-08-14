@@ -49,6 +49,10 @@ export const list: Command = {
         "value": 'Idol',
       },
       {
+        "name": 'Official Channels',
+        "value": 'Official Channels',
+      },
+      {
         "name": 'Prism',
         "value": 'Prism Project',
       },
