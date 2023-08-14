@@ -31,20 +31,22 @@ Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
 * Modify `src/config.ts` and replace Owner and Devs with your Discord ID.
 * Modify `src/core/registerSlashCommands.ts` and replace client_id with the client ID of your bot.
 * (Optional) Replace the channel ID in `src/core/events/guildCreate.ts` and `src/core/events/guildDelete.ts` with your
-  own channel ID for bot logs.
+  own channel ID for bot logs. And replace the channel ID in `src/index.ts` to your own channel ID for bot error logging.
 * Move the PomuBot folder to your server or hosting platform and run `npm i` to install dependencies.
 * Run `npm run tsc` to compile the TypeScript files.
 * Run `node build/core/registerSlashCommands.js` to register slash commands to discord.
 * Run `node build/index.js` to start the bot.
+* 
 
-## This is a private repository
 
-So please don't push any code or share this repository with anyone else.
-The modifications to the source code are done purely for private use on allowed servers.
-
-If there are any issues or questions please contact NobleNoishii on Discord.
 
 ## Credits
 This bot would not be possible without the original source code from Luna Translations.
 
-### I hate making documentation or actual readme things so this is my best explanation on how to set up the bot. If you want more help just send me a message.
+### Note
+
+I am not affiliated with Luna Translations in any way. I just use the source code and built on it.
+
+I don't really make readme's or guides on how to set up stuff. So if you don't understand tech or code. I'm sorry.
+
+If there are any issues or questions please contact NobleNoishii on Discord.
