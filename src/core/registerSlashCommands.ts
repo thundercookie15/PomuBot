@@ -8,8 +8,6 @@ dotenv.config({path: __dirname + '/../../.env'})
 const commands = loadAllCommands()
 
 const clientId = 'BOT_CLIENT_ID'
-// const clientId = '819785987420848128'
-// const guildId = '797780320405553223'
 
 const rest = new REST({version: '10'}).setToken(process.env.DISCORD_PROD_TOKEN)
 
