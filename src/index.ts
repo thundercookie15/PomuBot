@@ -1,5 +1,5 @@
 /**
- * LUNA'S TRANSLATIONS DISCORD BOT
+ * POMU'S TRANSLATIONS DISCORD BOT
  */
 Error.stackTraceLimit = Infinity
 import * as dotenv from 'dotenv'
@@ -18,7 +18,7 @@ mongoose.connect(MONGODB_URL, {
 process.on('uncaughtException', function (err) {
   console.log('Uncaught exception: ' + err)
   client.guilds.cache.find((g) => g.id === '')
-  const ch = client.channels.cache.get('1098360039955234927')
+  const ch = client.channels.cache.get('INTERNAL_ERROR_CHANNEL_ID')
   ch?.isTextBased() && ch.send('UNCAUGHT EXCEPTION')
 
   console.log(err.stack)

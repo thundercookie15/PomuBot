@@ -1,28 +1,50 @@
 # PomuBot - A Discord Bot based off of Luna Translations
 
-Pomubot is an upgraded and modified version of Luna's translations.
+Pomubot is an upgraded and modified version of Luna's translations. Adding many new features and just general
+improvements.
+
+Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
+
+## Features
+
+- Relaying YouTube livestream chat translations in real time from YouTube livechat to Discord
+- Relaying channel owner and channel mod messages
+- Relaying a streamer's activity in other streamers' livestream chat
+- Sending notifications for community posts, YouTube streams, TwitCasting streams
+- Easy translator blacklisting system
+- Manual blacklisting system
+- Relay prechat messages up to 24 hours of initial livestream
+
 
 ## How to set up
+### Pre-requisites
+
 * Make sure you have the latest version of Node.js download the required is >=18.0.0
-* Make sure you have the latest version of Node Package Manager (NPM) installed.
+* Make sure you have the latest version of Node Package Manager (**NPM**) installed.
 * Make sure the latest version of MongoDB is installed on your server.
-* Download PomuBot by cloning the repository.
+
+### Setting up the bot
+* Download PomuBot by cloning the repository or downloading it as a ZIP file and extracting it.
 * Modify the file `src/helpers/youtubeApi.ts` and replace YOUTUBE_API_KEY with your YouTube API key.
 * Modify `.env.example` and replace the values with your own.
 * Rename `.env.example` to .env
 * Modify `src/config.ts` and replace Owner and Devs with your Discord ID.
 * Modify `src/core/registerSlashCommands.ts` and replace client_id with the client ID of your bot.
-* (Optional) Replace the channel ID in `src/core/events/guildCreate.ts` and `src/core/events/guildDelete.ts` with your own channel ID for bot logs.
+* (Optional) Replace the channel ID in `src/core/events/guildCreate.ts` and `src/core/events/guildDelete.ts` with your
+  own channel ID for bot logs.
 * Move the PomuBot folder to your server or hosting platform and run `npm i` to install dependencies.
 * Run `npm run tsc` to compile the TypeScript files.
 * Run `node build/core/registerSlashCommands.js` to register slash commands to discord.
 * Run `node build/index.js` to start the bot.
 
 ## This is a private repository
+
 So please don't push any code or share this repository with anyone else.
 The modifications to the source code are done purely for private use on allowed servers.
 
 If there are any issues or questions please contact NobleNoishii on Discord.
 
+## Credits
+This bot would not be possible without the original source code from Luna Translations.
 
-## Hehe I suck at making readme's  just contact me if you have any questions on how to set up the bot.
+### I hate making documentation or actual readme things so this is my best explanation on how to set up the bot. If you want more help just send me a message.

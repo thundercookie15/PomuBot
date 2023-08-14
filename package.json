@@ -1,7 +1,7 @@
 {
-  "name": "luna_translations_bot",
+  "name": "pomu_bot",
   "version": "3",
-  "description": "Bot for the Hololive community processing all Hololive YouTube livechats.",
+  "description": "Bot for the VTuber community to relay messages from YouTube chats to Discord.",
   "main": "build/index.js",
   "scripts": {
     "tsc": "tsc",
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git"
   },
-  "author": "tam <m.tam.carre@gmail.com>",
+  "author": "thundercookie15",
   "license": "MIT",
   "dependencies": {
     "@discordjs/builders": "^1.6.3",
