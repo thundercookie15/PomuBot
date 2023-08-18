@@ -27,16 +27,16 @@ Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
 * Download PomuBot by cloning the repository or downloading it as a ZIP file and extracting it.
 * Modify the file `src/helpers/youtubeApi.ts` and replace YOUTUBE_API_KEY with your YouTube API key.
 * Modify `.env.example` and replace the values with your own.
-* Rename `.env.example` to .env
-* Modify `src/config.ts` and replace Owner and Devs with your Discord ID.
+* Rename `.env.example` to `.env`
+* Modify `src/config.ts` and replace OwnerId with your Discord ID. You can leave DevID empty, it's not required.
 * Modify `src/core/registerSlashCommands.ts` and replace client_id with the client ID of your bot.
 * (Optional) Replace the channel ID in `src/core/events/guildCreate.ts` and `src/core/events/guildDelete.ts` with your
-  own channel ID for bot logs. And replace the channel ID in `src/index.ts` to your own channel ID for bot error logging.
+  own channel ID for bot logs. 
+* (Optional) Replace the channel ID in `src/index.ts` to your own logging channel ID for bot error logging.
 * Move the PomuBot folder to your server or hosting platform and run `npm i` to install dependencies.
 * Run `npm run tsc` to compile the TypeScript files.
 * Run `node build/core/registerSlashCommands.js` to register slash commands to discord.
 * Run `node build/index.js` to start the bot.
-* 
 
 
 
