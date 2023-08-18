@@ -11,7 +11,7 @@ export async function tl(text: string, language: string): Promise<string> {
     }),
   )
   const hasTl = tlObject?.translations !== undefined
-  const wasEng = tlObject?.translations?.[0].detected_source_language === ''
+  const wasEng = tlObject?.translations?.[0].detected_source_language === 'EN'
 
   return wasEng && hasTl ? text : tlObject?.translations?.[0].text ?? text
 }
