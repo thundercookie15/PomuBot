@@ -8,6 +8,7 @@ import {isBlacklistedOrUnwanted, isHoloID, isStreamer, isTl} from './commentBool
 import {GuildSettings, WatchFeatureSettings} from '../../core/db/models'
 import {Blacklist, ChatComment, Entries} from './chatRelayer'
 import {AddChatItemAction, Masterchat, MasterchatError, runsToString} from 'masterchat'
+import {translate} from "../microsoftTL";
 
 export default (input: ChatWorkerInput): void => {
   allEntries = input.allEntries
@@ -125,16 +126,17 @@ export async function processComments(
       const streamer = streamersMap.get(frame.channel.id)
       const author = streamersMap.get(cmt.id)
       const isCameo = isStreamer_ && !cmt.isOwner
-      const mustDeepL = isStreamer_ && !isHoloID(streamer)
-      const deepLTl = mustDeepL ? await tl(cmt.body, 'EN') : undefined
-      const mustShowTl = mustDeepL && deepLTl !== cmt.body
-      const maybeGossip = isStreamer_ || isTl_
 
       const entries = (entrs ?? allEntries).filter(
         ([{}, {}, f, e]) =>
           [(f === 'cameos' ? author : streamer)?.name, 'all'].includes(e.streamer) ||
           f === 'gossip',
       )
+      const mustDeepL = (isStreamer_ && !isHoloID(streamer)) && entries.length > 0
+
+      const deepLTl = mustDeepL ? await tl(cmt.body, 'en') : undefined
+      const mustShowTl = mustDeepL && deepLTl !== cmt.body
+      const maybeGossip = isStreamer_ || isTl_
 
       const mustSave = isTl_ || isStreamer_ || cmt.isMod
 
