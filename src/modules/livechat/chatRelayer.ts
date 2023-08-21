@@ -1,24 +1,17 @@
 import {DexFrame, isPublic, VideoId, YouTubeChannelId} from '../holodex/frames'
 import {findTextChannel, send} from '../../helpers/discord'
 import {Snowflake, TextChannel, ThreadChannel} from 'discord.js'
-import {
-  addToGuildRelayHistory,
-  getGuildData,
-  getAllSettings,
-  addToBotRelayHistory,
-} from '../../core/db/functions'
+import {addToBotRelayHistory, addToGuildRelayHistory, getAllSettings, getGuildData,} from '../../core/db/functions'
 import {GuildSettings, WatchFeature, WatchFeatureSettings} from '../../core/db/models'
 import {retryIfStillUpThenPostLog, sendAndForgetHistory} from './closeHandler'
 import {logCommentData} from './logging'
 import {frameEmitter} from '../holodex/frameEmitter'
-import {isMainThread, MessageChannel} from 'worker_threads'
-import {resolve} from 'path'
+import {isMainThread} from 'worker_threads'
 import {processComments, Task, toChatComments} from './chatRelayerWorker'
 import {io} from 'socket.io-client'
 import {debug, log} from '../../helpers'
 
-import {MasterchatError, Masterchat} from 'masterchat'
-import {pre} from "@typegoose/typegoose";
+import {Masterchat, MasterchatError} from 'masterchat'
 import {lessThanOneHourStartDifference} from "./chatProcesses";
 // const Piscina = require('piscina')
 
@@ -158,9 +151,9 @@ function setupRelayMasterchat(frame: DexFrame, postLog: boolean) {
   // @ts-ignore
   chat.on("error", (err) => {
     if (err instanceof MasterchatError) {
-      console.log(`Error detected; ${err.code} Code ${err.stack}`)
-      if (err.code === "membersOnly") log(`${frame.id} is a members only stream. Cannot relay chat messages.`)
-      if (err.code === "disabled") log(`Stream chat disabled for ${frame.id}`)
+      if (err.code === "membersOnly") log(`${frame.id} is a members only stream. Cannot relay chat messages. Channel: ${frame.channel.name}`)
+      else if (err.code === "disabled") log(`Stream chat disabled for video ID ${frame.id} by ${frame.channel.name}`)
+      else console.log(`Error detected; ${err.code} Code ${err.stack}`)
     }
   })
 
