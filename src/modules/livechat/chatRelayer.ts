@@ -75,8 +75,6 @@ tldex.on('subscribeSuccess', (msg) => {
     })
     return
   }
-
-  // console.log('subsucc ' + JSON.stringify(msg))
 })
 
 tldex.on('subscribeError', (msg) => {
@@ -104,10 +102,7 @@ function setupLive(frame: DexFrame, postLog: boolean) {
   ;(tldex as any).removeAllListeners?.(`${frame.id}/en`)
   if (activeRelays.has(frame.id)) activeRelays.delete(frame.id)
   tldex.on(`${frame.id}/en`, async (msg) => {
-    // TODO comment when pushing to live version
-    // if (msg.type === "update") debug(`Received update in ${frame.id}: ${JSON.stringify(msg)}`)
-    // if (msg.type !== "update") debug(`Received a message in ${frame.id}: ${JSON.stringify(msg)}`)
-    if (frame.status !== "live") return // TODO make this better instead of just returning
+    if (frame.status !== "live") return
     if (msg.name) {
       const cmt: ChatComment = {
         id: msg.channel_id ?? 'MChad-' + msg.name,
@@ -143,11 +138,6 @@ function setupRelayMasterchat(frame: DexFrame, postLog: boolean) {
     } else chat.stop()
   })
 
-  // chat.on("chat", async (chat) => {
-  //   console.log(`Detected chat in ${chat.authorName}, ${frame.channel.name}`)
-  //   }
-  // )
-
   // @ts-ignore
   chat.on("error", (err) => {
     if (err instanceof MasterchatError) {
@@ -175,24 +165,6 @@ function setupRelayMasterchat(frame: DexFrame, postLog: boolean) {
       chat.listen({ignoreFirstResponse: true})
     }
   }
-
-  // tldex.on(`${frame.id}/en`, async (msg) => {
-  //   // debug(`Received a message in ${frame.id}: ${JSON.stringify(msg)}`)
-  //   if (lessThanOneHourStartDifference(frame.start_scheduled, Date.now()) && frame.status !== "live") {
-  //     if (!activeRelays.has(frame.id)) {
-  //       activeRelays.add(frame.id)
-  //       log(`Stream ${frame.id} by ${frame.channel.name} is starting in less than 1 hour, setting up pre-chat relay.`)
-  //       await chat.listen({ignoreFirstResponse: true})
-  //     }
-  //   }
-  //   if (frame.status === "live" && activeRelays.has(frame.id)) {
-  //     console.log("Stream has started stopping prechat relays and swapping to TLdex")
-  //     activeRelays.delete(frame.id)
-  //     chat.stop()
-  //     ;(tldex as any).removeAllListeners?.(`${frame.id}/en`)
-  //     setupLive(frame, true)
-  //   }
-  // })
 }
 
 export interface ChatComment {
@@ -249,51 +221,12 @@ async function runTask(task: Task): Promise<void> {
     const ch = findTextChannel(task.cid)
     const thread = task.tlRelay ? await findFrameThread(task.vId, task.g) : null
 
-    log(`[MESSAGE NOT SENT (DEBUG MODE)] ${task.vId} | ${task.content}`);
-    // const lastMsg = ch?.lastMessage
-    // const isBotLastPoster = lastMsg?.author?.id === client.user?.id
-    // // // this code is ugly and duplicated but im in a hurry
-    // if (isBotLastPoster) {
-    // tryOrLog (() => {
-    // lastMsg?.edit(`${lastMsg.content}\n${task.content}`)
-    // .then (msg => {
-    // if (task.save && msg) {
-    // saveComment (
-    // task.save.comment,
-    // task.save.frame,
-    // 'guild',
-    // msg.id,
-    // msg.channelId,
-    // task.g._id,
-    // )
-    // }
-    // })
-    // .catch (() => {
-    // send (thread ?? ch, task.content)
-    // .then (msg => {
-    // if (task.save && msg) {
-    // saveComment (
-    // task.save.comment,
-    // task.save.frame,
-    // 'guild',
-    // msg.id,
-    // msg.channelId,
-    // task.g._id,
-    // )
-    // }
-    // })
-    // })
-    // })
-    // } else {
-
-    ({ch, thread});
-    // DISABLED 2022-10-12
+    log(`[SENDING MESSAGE] ${task.vId} | ${task.content}`);
     send(thread ?? ch, task.content).then((msg) => {
       if (task.save && msg) {
         saveComment(task.save.comment, task.save.frame, 'guild', msg.id, msg.channelId, task.g._id)
       }
     })
-    // }
   }
 }
 
