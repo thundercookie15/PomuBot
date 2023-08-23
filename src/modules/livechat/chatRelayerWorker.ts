@@ -8,7 +8,6 @@ import {isBlacklistedOrUnwanted, isHoloID, isStreamer, isTl} from './commentBool
 import {GuildSettings, WatchFeatureSettings} from '../../core/db/models'
 import {Blacklist, ChatComment, Entries} from './chatRelayer'
 import {AddChatItemAction, Masterchat, MasterchatError, runsToString} from 'masterchat'
-import {translate} from "../microsoftTL";
 
 export default (input: ChatWorkerInput): void => {
   allEntries = input.allEntries
@@ -134,7 +133,7 @@ export async function processComments(
       )
       const mustDeepL = (isStreamer_ && !isHoloID(streamer)) && entries.length > 0
 
-      const deepLTl = mustDeepL ? await tl(cmt.body, 'en') : undefined
+      const deepLTl = mustDeepL ? await tl(cmt.body, 'EN') : undefined
       const mustShowTl = mustDeepL && deepLTl !== cmt.body
       const maybeGossip = isStreamer_ || isTl_
 
@@ -153,7 +152,7 @@ export async function processComments(
           const getTask = match(f, {
             cameos: isCameo ? relayCameo : doNothing,
             gossip: maybeGossip ? relayGossip : doNothing,
-            relay: frame.status === "live" ? relayTlOrStreamerComment : relayPreChat,
+            relay: relayMessage,
           })
 
           ///////////////////////////////////////////////////////////////////////////////
@@ -223,39 +222,17 @@ function relayGossip(data: RelayData): SendMessageTask | undefined {
   return stalked && isGossip(data.cmt, stalked, data.frame) ? relayCameo(data, true) : undefined
 }
 
-function relayPreChat({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task | undefined {
+function relayMessage({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task | undefined {
   const isATl = cmt.isTl || isTl(cmt.body, g)
-  const mustPost =
-    (cmt.isOwner ||
-      (isATl && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
-      isStreamer(cmt.id) ||
-      (cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl)) && g.prechat)
-
-  const {premoji, url, author, text, tl} = extracted(cmt, isATl, deepLTl, g, frame);
-
-  return mustPost
-    ? {
-      _tag: 'SendMessageTask',
-      vId: frame.id,
-      g,
-      tlRelay: true,
-      cid: discordCh,
-      content: `${emoji.prechat} ${premoji} ${author} \`${text}\`${tl}${url}`,
-      save: {
-        comment: cmt,
-        frame,
-      },
-    }
-    : undefined
-}
-
-function relayTlOrStreamerComment({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task | undefined {
-  const isATl = cmt.isTl || isTl(cmt.body, g)
-  const mustPost =
+  const prechat = frame.status === 'upcoming'
+  const commons =
     cmt.isOwner ||
     (isATl && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
-    isStreamer(cmt.id) ||
-    (cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl))
+    isStreamer(cmt.id);
+
+  const modCheck = cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl);
+
+  const mustPost = prechat ? (commons || (modCheck && g.prechat)) : commons;
 
   const {premoji, url, author, text, tl} = extracted(cmt, isATl, deepLTl, g, frame);
 
@@ -266,7 +243,7 @@ function relayTlOrStreamerComment({discordCh, bl, deepLTl, cmt, g, frame}: Relay
       g,
       tlRelay: true,
       cid: discordCh,
-      content: `${premoji} ${author} \`${text}\`${tl}${url}`,
+      content: `${prechat ? emoji.prechat + ' ' : ''}${premoji} ${author} \`${text}\`${tl}${url}`,
       save: {
         comment: cmt,
         frame,
