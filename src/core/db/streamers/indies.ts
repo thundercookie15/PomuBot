@@ -122,7 +122,7 @@ export const indies = [
   },
   {
     name: 'Ichika Maia',
-    ytId: 'UCKxuYJi4Ao5-v88cb9miHtg',
+    ytId: 'UCuKuBKEK3YIVgWW_2KJ4Htw',
     chName: 'Maia Ch.・マーヤ',
     picture:
       'https://yt3.googleusercontent.com/dqBAN8ZWWukCMNDw7t_nFfi_PDA4Nkf-zb3nMEuLmKHHXHH64R4G143NufZFW6KarJPv0LAHNQ=s176-c-k-c0x00ffffff-no-rj',
