@@ -3,11 +3,11 @@ import {DexFrame} from '../holodex/frames'
 import {Streamer, StreamerName, streamers, streamersMap} from '../../core/db/streamers'
 import {emoji} from '../../helpers/discord'
 import {Snowflake} from 'discord.js'
-import {tl} from '../deepl'
 import {isBlacklistedOrUnwanted, isHoloID, isStreamer, isTl} from './commentBooleans'
 import {GuildSettings, WatchFeatureSettings} from '../../core/db/models'
 import {Blacklist, ChatComment, Entries} from './chatRelayer'
 import {AddChatItemAction, Masterchat, MasterchatError, runsToString} from 'masterchat'
+import {tl} from "../deepl";
 
 export default (input: ChatWorkerInput): void => {
   allEntries = input.allEntries
@@ -228,11 +228,10 @@ function relayMessage({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task 
   const commons =
     cmt.isOwner ||
     (isATl && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
-    isStreamer(cmt.id);
+    isStreamer(cmt.id) ||
+    (cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl));
 
-  const modCheck = cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl);
-
-  const mustPost = prechat ? (commons || (modCheck && g.prechat)) : commons;
+  const mustPost = prechat ? (commons && g.prechat) : commons;
 
   const {premoji, url, author, text, tl} = extracted(cmt, isATl, deepLTl, g, frame);
 
