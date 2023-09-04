@@ -255,6 +255,7 @@ function isOnlyStreamerRelayedMultipleTimes(g: GuildSettings, streamer: string):
   const relays = g.relay
   return relays.filter((r) => r.streamer === streamer).length > 1 && relays.every((r) => r.streamer === streamer)
 }
+
 function extracted(cmt: ChatComment, isATl: boolean, deepLTl: string | undefined, g: GuildSettings, frame: DexFrame) {
   const vauthor = streamersMap.get(cmt.id)
   const groups = vauthor?.groups as string[] | undefined
@@ -263,7 +264,7 @@ function extracted(cmt: ChatComment, isATl: boolean, deepLTl: string | undefined
 
   let url = '';
 
-  if (!cmt.isOwner && g.relay.length > 1 && !isOnlyStreamerRelayedMultipleTimes(g, streamersMap.get(cmt.id)!.name)) {
+  if (!cmt.isOwner && g.relay.length > 1 && !isOnlyStreamerRelayedMultipleTimes(g, streamersMap.get(cmt.id)!.name) && g.showChat) {
     url = `\n**Chat:** [${frame.channel.name}](https://youtu.be/${frame.id})`;
   }
 

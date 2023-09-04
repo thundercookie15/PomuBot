@@ -56,6 +56,9 @@ export class GuildSettings {
   @prop({default: true})
   public deepl: boolean
 
+  @prop({default: true})
+  public showChat: boolean
+
   @prop({default: 'English'})
   public language: string
 
@@ -90,4 +93,4 @@ export type RoleSetting = 'admins' | 'blacklisters'
 
 export type WatchFeature = 'community' | 'gossip' | 'cameos' | 'relay' | 'twitcasting' | 'youtube'
 
-export type SettingToggle = 'deepl' | 'modMessages' | 'threads' | 'prechat'
+export type SettingToggle = 'deepl' | 'modMessages' | 'threads' | 'prechat' | 'showChat'
