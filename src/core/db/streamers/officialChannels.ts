@@ -59,4 +59,14 @@ export const official_channels = [
     twitter: 'hololive_En',
     aliases: [],
   },
+  {
+    name: 'Hololive DEV_IS',
+    ydId: 'UC10wVt6hoQiwySRhz7RdOUA',
+    chName: 'hololive DEV_IS',
+    picture:
+      'https://yt3.googleusercontent.com/KTypB1brQ2yd1KtZUBo4Y533L9kHmNeB1Q9aHZyfqWm3YE_6EOL10VYWj4LVRTwQ2jtg6hMyJQ=s800-c-k-c0x00ffffff-no-rj',
+    groups: ['Group channel', 'Hololive'],
+    twitter: '',
+    aliases: [],
+  }
 ] as const
