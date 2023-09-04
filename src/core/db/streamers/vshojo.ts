@@ -49,4 +49,14 @@ export const vshojo= [
     twitter: 'LichVtuber',
     aliases: ['Apricot the Lich', 'Froot'],
   },
+  {
+    name: 'GEEGA',
+    ytId: 'UCUERxnZSjCq-G7OfYL7Nukg',
+    chName: 'GEEGA',
+    picture:
+      'https://yt3.googleusercontent.com/Y64nDS93R99bggOHqvi8mW00-4j89BisH68p5NZqrsU2jRXa6WuBdeiMQ17SITr3cZEFCxS8=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['VShojo'],
+    twitter: 'GeneralGEEGA',
+    aliases: ['General GEEGA', 'GEEGA']
+  },
 ] as const
