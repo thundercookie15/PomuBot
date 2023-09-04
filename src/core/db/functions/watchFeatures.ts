@@ -148,7 +148,6 @@ function removeEntry({feature, intr, streamer, remove, g}: ValidatedOptions): vo
             value: `<#${intr.channel!.id}>`,
             inline: true,
           },
-          ...getEntryFields(newEntries),
         ],
       },
       false,
