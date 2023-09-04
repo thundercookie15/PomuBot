@@ -251,13 +251,17 @@ function relayMessage({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task 
     : undefined
 }
 
+function isOnlyStreamerRelayedMultipleTimes(g: GuildSettings, streamer: string): boolean {
+  const relays = g.relay
+  return relays.filter((r) => r.streamer === streamer).length > 1 && relays.every((r) => r.streamer === streamer)
+}
 function extracted(cmt: ChatComment, isATl: boolean, deepLTl: string | undefined, g: GuildSettings, frame: DexFrame) {
   const vauthor = streamersMap.get(cmt.id)
   const groups = vauthor?.groups as string[] | undefined
   const vemoji = getAgencyEmote(groups)
   const premoji = isATl ? ':speech_balloon:' : isStreamer(cmt.id) ? vemoji : ':tools:'
 
-  const url = deepLTl ? (cmt.isOwner ? "" : `${g.relay.length > 1 ? `\n**Chat:** [${frame.channel.name}](<https://youtu.be/${frame.id}>)` : ''}`) : (cmt.isOwner ? "" : `${g.relay.length > 1 ? `\n**Chat:** [${frame.channel.name}](<https://youtu.be/${frame.id}>)` : ''}`)
+  const url = deepLTl ? (cmt.isOwner ? "" : `${g.relay.length > 1 && !isOnlyStreamerRelayedMultipleTimes(g, streamersMap.get(cmt.id)!.name) ? `\n**Chat:** [${frame.channel.name}](<https://youtu.be/${frame.id}>)` : ''}`) : (cmt.isOwner ? "" : `${g.relay.length > 1 && !isOnlyStreamerRelayedMultipleTimes(g, streamersMap.get(cmt.id)!.name) ? `\n**Chat:** [${frame.channel.name}](<https://youtu.be/${frame.id}>)` : ''}`)
 
   const author = isATl ? `||${cmt.name}:||` : `**${cmt.name}:**`
   const text = cmt.body.replaceAll('`', "''")

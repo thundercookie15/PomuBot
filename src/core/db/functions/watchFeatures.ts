@@ -5,9 +5,9 @@
 import {createEmbed, createEmbedMessage, emoji, reply} from '../../../helpers/discord'
 import {match} from '../../../helpers'
 import {getSettings, updateSettings} from './'
-import {CommandInteraction, /* EmbedFieldData, */ Snowflake} from 'discord.js'
+import {CommandInteraction, Snowflake} from 'discord.js'
 import {findStreamerName, replyStreamerList, StreamerName, streamers} from '../streamers'
-import {WatchFeatureSettings, WatchFeature, GuildSettings} from '../models'
+import {GuildSettings, WatchFeature, WatchFeatureSettings} from '../models'
 import {getAllSettings} from './guildSettings'
 import {splitEvery} from 'ramda'
 
@@ -107,12 +107,10 @@ function addEntry({g, feature, intr, streamer, role, add}: ValidatedOptions): vo
   )
 }
 
-
 function replyCurrent({g, feature, intr, streamer, role, add}: ValidatedOptions): void {
   const newEntries = [
     ...g[feature],
   ]
-
   reply(
     intr,
     createEmbed(
