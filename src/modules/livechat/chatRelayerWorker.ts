@@ -264,7 +264,7 @@ function extracted(cmt: ChatComment, isATl: boolean, deepLTl: string | undefined
 
   let url = '';
 
-  if (!cmt.isOwner && g.relay.length > 1 && !isOnlyStreamerRelayedMultipleTimes(g, streamersMap.get(cmt.id)!.name) && g.showChat) {
+  if (!cmt.isOwner && g.relay.length > 1 && !isOnlyStreamerRelayedMultipleTimes(g, streamersMap.get(frame.channel.id)!.name) && g.showChat) {
     url = `\n**Chat:** [${frame.channel.name}](https://youtu.be/${frame.id})`;
   }
 
