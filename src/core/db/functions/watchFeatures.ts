@@ -99,7 +99,6 @@ function addEntry({g, feature, intr, streamer, role, add}: ValidatedOptions): vo
               },
             ]
             : []),
-          ...getEntryFields(newEntries),
         ],
       },
       false,
