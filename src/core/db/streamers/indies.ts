@@ -130,6 +130,16 @@ export const indies = [
     twitter: 'ayamy_garubinu',
     aliases: ['ayamy'],
   },
+  {
+    name: 'Nabi',
+    ytId: 'UCzKkwB84Y0ql0EvyOWRSkEw',
+    chName: 'Nabi',
+    picture:
+      'https://yt3.googleusercontent.com/03vzkDFh4wN995rnwnzRPL0rNv6tUHtVTddBTp5H89fGAJQPhDEwQ-BtxumhdQBzRYKCUAo44w=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['indies'],
+    twitter: '',
+    aliases: []
+  }
 ] as const
 
 
