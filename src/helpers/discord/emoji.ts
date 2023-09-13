@@ -15,6 +15,7 @@ export const emoji: Record<Name, EmojiCode> = {
   nijien: '<:NijiEN:1096841263317254315>',
   idol: '<:Idol:1097457745428480030>',
   vshojo: '<:VShojo:1097425316999340052>',
+  vreverie: '<:VReverie:1151564975257686248>',
   prechat: '<:PreChat:1097459065619238922>',
 } as const
 

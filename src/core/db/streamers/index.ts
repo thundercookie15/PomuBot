@@ -15,9 +15,10 @@ import {vshojo} from './vshojo'
 import {phase_connect} from './phaseconnect'
 import {prism_project} from "./prismproject";
 import {official_channels} from "./officialChannels";
+import {vreverie} from "./vreverie";
 
-export const streamers = StreamerArray([...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo] as const)
-export const streamerGroups = ['Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'Official Channels', 'VShojo', 'Phase Connect', 'Prism Project'] as const
+export const streamers = StreamerArray([...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie] as const)
+export const streamerGroups = ['Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'Official Channels', 'VShojo', 'Phase Connect', 'Prism Project', 'VReverie'] as const
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
@@ -36,6 +37,7 @@ function getStreamerArrayByGroup(group: string) {
   if (group === 'VShojo') return vshojo
   if (group === 'Phase Connect') return phase_connect
   if (group === 'Prism Project') return prism_project
+  if (group === 'VReverie') return vreverie
 }
 
 export const streamersYtIdSet: Set<YouTubeChannelId> = new Set(streamers.map((s) => s.ytId))

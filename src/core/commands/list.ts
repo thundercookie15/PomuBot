@@ -59,6 +59,10 @@ export const list: Command = {
       {
         "name": 'Phase Connect',
         "value": 'Phase Connect',
+      },
+      {
+        "name": 'VReverie',
+        "value": 'VReverie',
       }
     ).setRequired(false)),
   callback: (intr: ChatInputCommandInteraction): void => {

@@ -68,5 +68,15 @@ export const official_channels = [
     groups: ['Group channel', 'Hololive'],
     twitter: '',
     aliases: [],
+  },
+  {
+    name: 'VReverie Official',
+    ytId: 'UCfmwtHB52qFQaFFcKf-YMEw',
+    chName: 'VReverie Official',
+    picture:
+    'https://yt3.googleusercontent.com/4NUrhREfpHdG7Kb5_PY7vCP3Z2e27jMmhjEqSwNA19gl4hkXtfuOF9cBDgnnpkqxQG8oMWqyGQ=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['Group channel', 'VReverie'],
+    twitter: 'VReverieLive',
+    aliases: [],
   }
 ] as const
