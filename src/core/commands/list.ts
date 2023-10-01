@@ -61,6 +61,10 @@ export const list: Command = {
         "value": 'Phase Connect',
       },
       {
+        "name": 'VShojo',
+        "value": 'VShojo',
+      },
+      {
         "name": 'VReverie',
         "value": 'VReverie',
       }
