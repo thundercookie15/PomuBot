@@ -1,15 +1,5 @@
 export const indies = [
   {
-    name: 'Discord',
-    ytId: 'UCZ5XnGb-3t7jCkXdawN2tkA',
-    chName: 'placeholder73459',
-    picture:
-      'https://yt3.ggpht.com/ytc/AKedOLQc1OCf9gztVmcVnmI_41uN9axrRP8wd4a-GflFRQ=s88-c-k-c0x00ffffff-no-rj',
-    groups: ['indies'],
-    twitter: 'discord',
-    aliases: ['discord'],
-  },
-  {
     name: 'Iida Pochi',
     ytId: 'UC22BVlBsZc6ta3Dqz75NU6Q',
     chName: 'Iida Pochi.',
