@@ -328,5 +328,35 @@ export const nijisanji_en = [
     groups: ['Nijisanji', 'Nijisanji EN'],
     twitter: 'VezaliusBandage',
     aliases: ['Vezalius Bandage', 'Vezalius', 'Bandage'],
+  },
+  {
+    name: 'Kunai Nakasato',
+    ytId: 'UCwqtK-m6954_aHEvOYtZpyQ',
+    chName: 'Kunai Nakasato【NIJISANJI EN】',
+    picture:
+     'https://yt3.googleusercontent.com/cpOrgCDSmgMO9mNbftd8UKAtsZwIGRCV5t5EmjoQ2FcP-W3N7s6S4UUc_Daz24qjDnBxrTEBrtQ=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['Nijisanji', 'Nijisanji EN'],
+    twitter: 'kunainakasato',
+    aliases: ['Kunai Nakasato', 'Kunai', 'Nakasato'],
+  },
+  {
+    name: 'Victoria Brightshield',
+    ytId: 'UChTA8kHyInr2rKZ2aBv5ULw',
+    chName: 'Victoria Brightshield【NIJISANJI EN】',
+    picture:
+    'https://yt3.googleusercontent.com/gzVT4jpFkhTdDCOlrcuLAdI2DnFY08zj1VLvWtbZCZS2Qe7qFb6PubN9lV79qbzLh6AD-qd16w=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['Nijisanji', 'Nijisanji EN'],
+    twitter: 'VBrightshield',
+    aliases: ['Victoria Brightshield', 'Victoria', 'Brightshield'],
+  },
+  {
+    name: 'Claude Clawmark',
+    ytId: 'UCdh-YF2gTzqDNu0VU9lwPPw',
+    chName: 'Claude Clawmark【NIJISANJI EN】',
+    picture:
+    'https://yt3.googleusercontent.com/e7od55bIqtwAdCdpEdEf1d-PITBdVzntIaqGwTif46sTptNuJQ4WlVPPcfskh3wqb9axkDuOSg=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['Nijisanji', 'Nijisanji EN'],
+    twitter: 'ClaudeClawmark',
+    aliases: ['Claude Clawmark', 'Claude', 'Clawmark'],
   }
 ] as const
