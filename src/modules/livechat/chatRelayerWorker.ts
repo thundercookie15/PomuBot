@@ -229,6 +229,7 @@ function relayMessage({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task 
     cmt.isOwner ||
     (isATl && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
     isStreamer(cmt.id) ||
+    !cmt.body.toLowerCase().includes("hearted a super chat") ||
     (cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl));
 
   const mustPost = prechat ? (commons && g.prechat) : commons;
