@@ -74,9 +74,19 @@ export const official_channels = [
     ytId: 'UCfmwtHB52qFQaFFcKf-YMEw',
     chName: 'VReverie Official',
     picture:
-    'https://yt3.googleusercontent.com/4NUrhREfpHdG7Kb5_PY7vCP3Z2e27jMmhjEqSwNA19gl4hkXtfuOF9cBDgnnpkqxQG8oMWqyGQ=s176-c-k-c0x00ffffff-no-rj',
+      'https://yt3.googleusercontent.com/4NUrhREfpHdG7Kb5_PY7vCP3Z2e27jMmhjEqSwNA19gl4hkXtfuOF9cBDgnnpkqxQG8oMWqyGQ=s176-c-k-c0x00ffffff-no-rj',
     groups: ['Group channel', 'VReverie'],
     twitter: 'VReverieLive',
+    aliases: [],
+  },
+  {
+    name: 'EIEN Project',
+    ytId: 'UC6zxNnx62SRBSYsbxP-rjsQ',
+    chName: 'EIEN Project',
+    picture:
+      'https://yt3.googleusercontent.com/c8BeDiC42s-z2NizUk6mTDdmoafXBEjQTCyu69JxEZhyYXDdHZ3R0HrpLFKI4i8GByZS9Wfy=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['Group channel', 'EIEN'],
+    twitter: 'EIENproj',
     aliases: [],
   }
 ] as const

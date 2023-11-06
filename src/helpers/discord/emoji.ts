@@ -8,6 +8,7 @@ export const emoji: Record<Name, EmojiCode> = {
   ping: '<:LuLuPeek:1009722823075430460>',
   tc: '<:TwitCasting:1009722538080882760>',
   yt: '<:YouTube:1009722198073815122>',
+  eien: '<:EIEN:1170997130488451102>',
   peek: '<:PomuPeek:1009721716295090206>',
   phaseconnect: '<:PhaseConnect:1136302945810526290>',
   prism: '<:Prism:1136303642346016891>',

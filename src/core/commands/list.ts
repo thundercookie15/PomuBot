@@ -14,8 +14,11 @@ export const list: Command = {
     description: 'Lists supported YT channels.',
   },
   slash: new SlashCommandBuilder().setName('list').setDescription(description)
-    .addStringOption((option) => option.setName('group').setDescription('VTuber Agency').
-    addChoices(
+    .addStringOption((option) => option.setName('group').setDescription('VTuber Agency').addChoices(
+      {
+        "name": 'EIEN',
+        "value": 'EIEN',
+      },
       {
         "name": 'Hololive',
         "value": 'Hololive',
