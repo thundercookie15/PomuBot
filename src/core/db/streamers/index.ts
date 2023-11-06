@@ -25,19 +25,36 @@ export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
 
 // TODO make this pretty
 function getStreamerArrayByGroup(group: string) {
-  if (group === 'Hololive') return hololive
-  if (group === 'Nijisanji') return [nijisanji_en, nijisanji_id, nijisanji_jp, nijisanji_kr].flat()
-  if (group === 'Nijisanji EN') return nijisanji_en
-  if (group === 'Nijisanji ID') return nijisanji_id
-  if (group === 'Nijisanji KR') return nijisanji_kr
-  if (group === 'Nijisanji JP') return nijisanji_jp
-  if (group === 'Independent') return indies
-  if (group === 'Idol') return IdolComp
-  if (group === 'Official Channels') return official_channels
-  if (group === 'VShojo') return vshojo
-  if (group === 'Phase Connect') return phase_connect
-  if (group === 'Prism Project') return prism_project
-  if (group === 'VReverie') return vreverie
+  switch (group) {
+    case 'EIEN':
+      return eien
+    case 'Hololive':
+      return hololive
+    case 'Nijisanji':
+      return [nijisanji_en, nijisanji_id, nijisanji_jp, nijisanji_kr].flat()
+    case 'Nijisanji EN':
+      return nijisanji_en
+    case 'Nijisanji ID':
+      return nijisanji_id
+    case 'Nijisanji KR':
+      return nijisanji_kr
+    case 'Nijisanji JP':
+      return nijisanji_jp
+    case 'Independent':
+      return indies
+    case 'Idol':
+      return IdolComp
+    case 'Official Channels':
+      return official_channels
+    case 'VShojo':
+      return vshojo
+    case 'Phase Connect':
+      return phase_connect
+    case 'Prism Project':
+      return prism_project
+    case 'VReverie':
+      return vreverie
+  }
 }
 
 export const streamersYtIdSet: Set<YouTubeChannelId> = new Set(streamers.map((s) => s.ytId))
