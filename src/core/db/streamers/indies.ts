@@ -129,6 +129,16 @@ export const indies = [
     groups: ['indies'],
     twitter: '',
     aliases: []
+  },
+  {
+    name: 'Mikeneko',
+    ytId: 'UC54JqsuIbMw_d1Ieb4hjKoQ',
+    chName: 'みけねこch',
+    picture:
+    'https://yt3.googleusercontent.com/xp-Gpx4379mUVBgIIKKyABkJZAEZhBdLIL2JsgTiEpvfN7G0J4NHQ2uI3ycywuNKAlXJOSmsbQ=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['indies'],
+    twitter: '95rn16',
+    aliases: ['みけねこ', 'Mikeneko']
   }
 ] as const
 
