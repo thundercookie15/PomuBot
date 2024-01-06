@@ -8,7 +8,7 @@ import {getUsernameFromId} from "../../helpers/youtubeApi";
 
 const description = 'Blacklists the specified channel ID.'
 
-export const blacklistadd: Command = {
+export const blacklistchannel: Command = {
   config: {
     permLevel: 1,
   },
@@ -17,7 +17,7 @@ export const blacklistadd: Command = {
     description
   },
   slash: new SlashCommandBuilder()
-    .setName('blacklistadd')
+    .setName('blacklistchannel')
     .setDescription(description)
     .addStringOption((option) => option.setName('ytchannelid').setDescription('YT Channel ID').setRequired(true)),
   callback: (intr) => {
