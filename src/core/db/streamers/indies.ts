@@ -101,16 +101,6 @@ export const indies = [
     aliases: ['Giri', 'OniGiriEN']
   },
   {
-    name: 'Ichika Maia',
-    ytId: 'UCuKuBKEK3YIVgWW_2KJ4Htw',
-    chName: 'Maia Ch.・マーヤ',
-    picture:
-      'https://yt3.googleusercontent.com/dqBAN8ZWWukCMNDw7t_nFfi_PDA4Nkf-zb3nMEuLmKHHXHH64R4G143NufZFW6KarJPv0LAHNQ=s176-c-k-c0x00ffffff-no-rj',
-    groups: ['indies'],
-    twitter: 'ichikamaia',
-    aliases: ['Ichika Maia', 'Maia']
-  },
-  {
     name: 'Ayamy Garubinu',
     ytId: 'UCr9p1ZjLKgfaoqNorY7PiWQ',
     chName: 'ayamy あやみちゃんねる',
@@ -139,6 +129,16 @@ export const indies = [
     groups: ['indies'],
     twitter: '95rn16',
     aliases: ['みけねこ', 'Mikeneko']
+  },
+  {
+    name: 'Amatsuka Uto',
+    ytId: 'UCdYR5Oyz8Q4g0ZmB4PkTD7g',
+    chName: '天使うと',
+    picture:
+    'https://yt3.googleusercontent.com/7uUqPq6StI8aNqiXJm-MylsVXcVp2aLgmJDaG5eToC50SZdMQbKno5NW54DtiN7o7ryioXJ80Lc=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['indies'],
+    twitter: 'amatsukauto',
+    aliases: ['Amatsuka', 'Uto']
   }
 ] as const
 
