@@ -17,9 +17,10 @@ import {prism_project} from "./prismproject";
 import {official_channels} from "./officialChannels";
 import {vreverie} from "./vreverie";
 import {eien} from "./eien";
+import {pixellink} from "./pixellink";
 
-export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie] as const)
-export const streamerGroups = ['EIEN', 'Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'Official Channels', 'VShojo', 'Phase Connect', 'Prism Project', 'VReverie'] as const
+export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie, ...pixellink] as const)
+export const streamerGroups = ['EIEN', 'Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'Official Channels', 'VShojo', 'Phase Connect', 'Prism Project', 'PixelLink', 'VReverie'] as const
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
@@ -55,6 +56,8 @@ function getStreamerArrayByGroup(group: string) {
       return prism_project
     case 'VReverie':
       return vreverie
+    case 'PixelLink':
+      return pixellink
   }
 }
 

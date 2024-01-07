@@ -70,6 +70,10 @@ export const list: Command = {
       {
         "name": 'VReverie',
         "value": 'VReverie',
+      },
+      {
+        "name": 'PixelLink',
+        "value": 'PixelLink',
       }
     ).setRequired(false)),
   callback: (intr: ChatInputCommandInteraction): void => {

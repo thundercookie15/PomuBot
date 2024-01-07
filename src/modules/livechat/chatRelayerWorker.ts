@@ -299,7 +299,8 @@ function getAgencyEmote(groups: string[] | undefined): string {
             groups?.includes('Phase Connect') ? emoji.phaseconnect :
               groups?.includes('PRISM Project') ? emoji.prism :
                 groups?.includes('VReverie') ? emoji.vreverie :
-                  groups?.includes('EIEN') ? emoji.eien : emoji.Speaker
+                  groups?.includes('EIEN') ? emoji.eien :
+                    groups?.includes('PixelLink')? emoji.pixellink : emoji.Speaker
 }
 
 interface RelayData {

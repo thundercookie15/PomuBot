@@ -11,6 +11,7 @@ export const emoji: Record<Name, EmojiCode> = {
   eien: '<:EIEN:1170997130488451102>',
   peek: '<:PomuPeek:1009721716295090206>',
   phaseconnect: '<:PhaseConnect:1136302945810526290>',
+  pixellink: '<:PixelLink:1193358896849506417>',
   prism: '<:Prism:1136303642346016891>',
   niji: '<:nijisanji:1009718487364673566>',
   nijien: '<:NijiEN:1096841263317254315>',

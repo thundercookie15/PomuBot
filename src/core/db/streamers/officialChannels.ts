@@ -88,5 +88,15 @@ export const official_channels = [
     groups: ['Group channel', 'EIEN'],
     twitter: 'EIENproj',
     aliases: [],
+  },
+  {
+    name: 'PixelLink Official',
+    ytId: 'UCSQX7yzZVwI-LfavSGXfDQ',
+    chName: 'PixelLink Official',
+    picture:
+    'https://yt3.googleusercontent.com/iP3LFVCoNKziuUsSUM4qJXWjsKbW-U8bz_aZO4jKNoZOePxJdDzzEUxTnoPwWkL2TpzI8GZy=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['Group channel', 'PixelLink'],
+    twitter: 'PixelLinkEN',
+    aliases: [],
   }
 ] as const
