@@ -20,45 +20,13 @@ import {eien} from "./eien";
 import {pixellink} from "./pixellink";
 
 export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie, ...pixellink] as const)
-export const streamerGroups = ['EIEN', 'Hololive', 'Nijisanji', "Nijisanji EN", 'Nijisanji ID', 'Nijisanji KR', 'Nijisanji JP', 'Indies', 'Idol', 'Official Channels', 'VShojo', 'Phase Connect', 'Prism Project', 'PixelLink', 'VReverie'] as const
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
 
 // TODO make this pretty
 function getStreamerArrayByGroup(group: string) {
-  switch (group) {
-    case 'EIEN':
-      return eien
-    case 'Hololive':
-      return hololive
-    case 'Nijisanji':
-      return [nijisanji_en, nijisanji_id, nijisanji_jp, nijisanji_kr].flat()
-    case 'Nijisanji EN':
-      return nijisanji_en
-    case 'Nijisanji ID':
-      return nijisanji_id
-    case 'Nijisanji KR':
-      return nijisanji_kr
-    case 'Nijisanji JP':
-      return nijisanji_jp
-    case 'Independent':
-      return indies
-    case 'Idol':
-      return IdolComp
-    case 'Official Channels':
-      return official_channels
-    case 'VShojo':
-      return vshojo
-    case 'Phase Connect':
-      return phase_connect
-    case 'Prism Project':
-      return prism_project
-    case 'VReverie':
-      return vreverie
-    case 'PixelLink':
-      return pixellink
-  }
+  return streamerGroupChoices.find((x) => x.value === group)?.streamerGroup
 }
 
 export const streamersYtIdSet: Set<YouTubeChannelId> = new Set(streamers.map((s) => s.ytId))
@@ -98,7 +66,7 @@ export function replyStreamerList(x: CommandInteraction | ValidatedOptions): voi
     msg,
     createEmbed({
       title: 'Supported Streamer Groups',
-      description: streamerGroups.join('\n'),
+      description: streamerGroupChoices.map(group => group.name).join('\n')
     }),
   )
 }
@@ -126,5 +94,84 @@ export type Streamer = Readonly<{
 function StreamerArray<T extends readonly Streamer[]>(arr: T) {
   return arr
 }
+
+export const streamerGroupChoices =  [
+  {
+    name: 'EIEN',
+    value: 'EIEN',
+    streamerGroup: eien
+  },
+  {
+    name: 'Hololive',
+    value: 'Hololive',
+    streamerGroup: hololive
+  },
+  {
+    name: 'Nijisanji',
+    value: 'Nijisanji',
+    streamerGroup: [nijisanji_en, nijisanji_id, nijisanji_jp, nijisanji_kr].flat()
+  },
+  {
+    name: 'Nijisanji JP',
+    value: 'Nijisanji JP',
+    streamerGroup: nijisanji_jp
+  },
+  {
+    name: 'Nijisanji ID',
+    value: 'Nijisanji ID',
+    streamerGroup: nijisanji_id
+  },
+  {
+    name: 'Nijisanji EN',
+    value: 'Nijisanji EN',
+    streamerGroup: nijisanji_en
+  },
+  {
+    name: 'Nijisanji KR',
+    value: 'Nijisanji KR',
+    streamerGroup: nijisanji_kr
+  },
+  {
+    name: 'Indies',
+    value: 'Independent',
+    streamerGroup: indies
+  },
+  {
+    name: 'Idol',
+    value: 'Idol',
+    streamerGroup: IdolComp
+  },
+  {
+    name: 'Official Channels',
+    value: 'Official Channels',
+    streamerGroup: official_channels
+  },
+  {
+    name: 'Prism',
+    value: 'Prism Project',
+    streamerGroup: prism_project
+  },
+  {
+    name: 'Phase Connect',
+    value: 'Phase Connect',
+    streamerGroup: phase_connect
+  },
+  {
+    name: 'VShojo',
+    value: 'VShojo',
+    streamerGroup: vshojo
+  },
+  {
+    name: 'VReverie',
+    value: 'VReverie',
+    streamerGroup: vreverie
+  },
+  {
+    name: 'PixelLink',
+    value: 'PixelLink',
+    streamerGroup: pixellink
+  }
+]
+
 
 // type stringOrRegex = string | RegExp
