@@ -4,7 +4,7 @@ import {ciEquals} from '../../../helpers'
 import {createEmbed, reply} from '../../../helpers/discord'
 import {YouTubeChannelId} from '../../../modules/holodex/frames'
 import {ValidatedOptions} from '../functions'
-import {hololive} from './hololive'
+import {hololive_jp} from './hololiveJP'
 import {indies} from './indies'
 import {nijisanji_en} from './nijisanjiEN'
 import {nijisanji_id} from './nijisanjiID'
@@ -18,8 +18,11 @@ import {official_channels} from "./officialChannels";
 import {vreverie} from "./vreverie";
 import {eien} from "./eien";
 import {pixellink} from "./pixellink";
+import {hololive_en} from "./hololiveEN";
+import {hololive_id} from "./hololiveID";
+import {holostars} from "./holostars";
 
-export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie, ...pixellink] as const)
+export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive_en, ...hololive_id, ...hololive_jp, ...holostars, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie, ...pixellink] as const)
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
@@ -104,7 +107,27 @@ export const streamerGroupChoices =  [
   {
     name: 'Hololive',
     value: 'Hololive',
-    streamerGroup: hololive
+    streamerGroup: [hololive_id, hololive_jp, hololive_en, holostars].flat()
+  },
+  {
+    name: 'Hololive JP',
+    value: 'Hololive JP',
+    streamerGroup: hololive_jp
+  },
+  {
+    name: 'Hololive ID',
+    value: 'Hololive ID',
+    streamerGroup: hololive_id
+  },
+  {
+    name: 'Hololive EN',
+    value: 'Hololive EN',
+    streamerGroup: hololive_en
+  },
+  {
+    name: 'Holostars',
+    value: 'Holostars',
+    streamerGroup: holostars
   },
   {
     name: 'Nijisanji',

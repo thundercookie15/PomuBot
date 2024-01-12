@@ -1,0 +1,148 @@
+export const hololive_en = [
+  {
+    name: 'Watson Amelia',
+    ytId: 'UCyl1z3jo3XHR1riLFKG5UAg',
+    chName: 'Watson Amelia Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/ytc/AAUvwngni7uCVYUaj_uiNnA9t1cR1PfIz-rE-GvAVeN_=s800-c-k-c0x00ffffff-no-rj',
+    groups: ['English 1st Gen', 'Hololive'],
+    twitter: 'watsonameliaen',
+    aliases: ['amelia', 'ame'],
+  },
+  {
+    name: 'Takanashi Kiara',
+    ytId: 'UCHsx4Hqa-1ORjQTh9TYDhww',
+    chName: 'Takanashi Kiara Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/ytc/AAUvwnh1s1xECXk9_DaR77i4LBBWkTY-nOi_O0-fPoX8=s800-c-k-c0x00ffffff-no-rj',
+    groups: ['English 1st Gen', 'Hololive'],
+    twitter: 'takanashikiara',
+    aliases: ['kiara', 'tenchou', 'きあら', 'キアラ', '店長'],
+  },
+  {
+    name: 'Takanashi Kiara SubCh',
+    ytId: 'UCq4ky2drohLT7W0DmDEw1dQ',
+    chName: 'Takanashi Kiara SubCh.',
+    picture:
+      'https://yt3.ggpht.com/ytc/AAUvwnh1s1xECXk9_DaR77i4LBBWkTY-nOi_O0-fPoX8=s800-c-k-c0x00ffffff-no-rj',
+    groups: ['English 1st Gen', 'Hololive'],
+    twitter: 'takanashikiara',
+    aliases: [],
+  },
+  {
+    name: 'Mori Calliope',
+    ytId: 'UCL_qhgtOy0dy1Agp8vkySQg',
+    chName: 'Mori Calliope Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/ytc/AAUvwniY6zzRc3nUO1zLCBlmaAxeLNDoVWjw0hKGztvJ=s800-c-k-c0x00ffffff-no-rj-mo',
+    groups: ['English 1st Gen', 'Hololive'],
+    twitter: 'moricalliope',
+    aliases: ['calliope', 'calli', 'mori'],
+  },
+  {
+    name: 'Ninomae Ina’nis',
+    ytId: 'UCMwGHR0BTZuLsmjY_NT5Pwg',
+    chName: "Ninomae Ina'nis Ch. hololive-EN",
+    picture:
+      'https://yt3.ggpht.com/ytc/AAUvwng37V0l-NwF3bu7QA4XmOP5EZFwk5zJE-78OHP9=s800-c-k-c0x00ffffff-no-rj',
+    groups: ['English 1st Gen', 'Hololive'],
+    twitter: 'ninomaeinanis',
+    aliases: ['ina'],
+  },
+  {
+    name: 'Gawr Gura',
+    ytId: 'UCoSrY_IQQVpmIRZ9Xf-y93g',
+    chName: 'Gawr Gura Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/ytc/AAUvwnhSSaF3Q-PyyTSis4EH6Cu8FZ32LNvkxI9Gl_rn=s800-c-k-c0x00ffffff-no-rj',
+    groups: ['English 1st Gen', 'Hololive'],
+    twitter: 'gawrgura',
+    aliases: ['gura'],
+  },
+  {
+    name: 'IRyS',
+    ytId: 'UC8rcEBzJSleTkf_-agPM20g',
+    chName: 'IRyS Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/UwxlX1PuB_RwJyEUW_ofbBR6saY8n5_p8A9_1bY65zygFrfqIb1GM8dIK33EJboDDnRVyw=s88-c-k-c0x00ffffff-no-rj',
+    groups: ['English', 'Hololive'],
+    twitter: 'irys_en',
+    aliases: ['irys'],
+  },
+  {
+    name: 'Hakos Baelz',
+    ytId: 'UCgmPnx-EEeOrZSg5Tiw7ZRQ',
+    chName: 'Hakos Baelz Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/GWIwRbtVQ2TAlvH8Mf37FMpemTrwmUSbTSazp9Aul6KwdKQmvx7IbLZepDk0sp8ReW3qBhsU=s88-c-k-c0x00ffffff-no-rj',
+    groups: ['English 2nd Gen', 'Hololive'],
+    twitter: 'hakosbaelz',
+    aliases: ['baelz', 'hakos'],
+  },
+  {
+    name: 'Nanashi Mumei',
+    ytId: 'UC3n5uGu18FoCy23ggWWp8tA',
+    chName: 'Nanashi Mumei Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/MI8E8Wfmc_ngNZXUwu8ad0D-OtqDhmqGVULEu25z-ccscwzJpAw-7ewFXzZYLK2jHB9d5OgQDq4=s88-c-k-c0x00ffffff-no-rj',
+    groups: ['English 2nd Gen', 'Hololive'],
+    twitter: 'nanashimumei_en',
+    aliases: ['nanashi', 'mumei'],
+  },
+  {
+    name: 'Ouro Kronii',
+    ytId: 'UCmbs8T6MWqUHP1tIQvSgKrg',
+    chName: 'Ouro Kronii Ch. hololive-EN',
+    picture:
+      'https://yt3.ggpht.com/6670YE31bbAtAi7m_UL-KWZBdL5wvmfHlLtcS4HxsBZBQNqmAk7Y-iiIOjawO_0HYXpS4HfC=s88-c-k-c0x00ffffff-no-rj',
+    groups: ['English 2nd Gen', 'Hololive'],
+    twitter: 'ourokronii',
+    aliases: ['kronii'],
+  },
+  {
+    name: 'Ceres Fauna',
+    ytId: 'UCO_aKKYxn4tvrqPjcTzZ6EQ',
+    chName: 'Ceres Fauna Ch. hololive-EN',
+    picture:
+      'https://yt3.googleusercontent.com/cBtserkb211p6If2OewgWd8oriIKRkfwTcP4_Vdq2YETG5TK9Q02v4cYmnLU03KBAJ0gcDha7oQ=s176-c-k-c0x00ffffff-no-rj',
+    groups: ['English 2nd Gen', 'Hololive'],
+    twitter: 'ceresfauna',
+    aliases: ['fauna'],
+  },
+  {
+    name: 'FUWAMOCO',
+    ytId: 'UCt9H_RpQzhxzlyBxFqrdHqA',
+    chName: 'FUWAMOCO Ch. hololive-EN',
+    picture: 'dont put anything here',
+    groups: ['English 3rd Gen', 'Hololive'],
+    twitter: 'fuwamoco_en',
+    aliases: ['FUWAMOCO', 'Fuwa', 'Fuwawa', 'Moco', 'Mococo'],
+  },
+  {
+    name: 'Shiori Novella',
+    ytId: 'UCgnfPPb9JI3e9A4cXHnWbyg',
+    chName: 'Shiori Novella Ch. hololive-EN',
+    picture: 'dont put anything here',
+    groups: ['English 3rd Gen', 'Hololive'],
+    twitter: 'shiorinovella',
+    aliases: ['Shiori', 'Shio', 'Novella'],
+  },
+  {
+    name: 'Koseki Bijou',
+    ytId: 'UC9p_lqQ0FEDz327Vgf5JwqA',
+    chName: 'Koseki Bijou Ch. hololive-EN',
+    picture: 'dont put anything here',
+    groups: ['English 3rd Gen', 'Hololive'],
+    twitter: 'kosekibijou',
+    aliases: ['Bijou', 'Koseki'],
+  },
+  {
+    name: 'Nerissa Ravencroft',
+    ytId: 'UC_sFNM0z0MWm9A6WlKPuMMg',
+    chName: 'Nerissa Ravencroft Ch. hololive-EN',
+    picture: 'dont put anything here',
+    groups: ['English 3rd Gen', 'Hololive'],
+    twitter: 'nerissa_en',
+    aliases: ['Nerissa', 'Ravencroft'],
+  },
+] as const
