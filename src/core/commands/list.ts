@@ -1,7 +1,7 @@
 import {SlashCommandBuilder} from '@discordjs/builders'
-import {ChatInputCommandInteraction, CommandInteraction} from 'discord.js'
+import {ChatInputCommandInteraction} from 'discord.js'
 import {Command, createEmbed, reply} from '../../helpers/discord'
-import {getStreamerList, streamerGroups} from '../db/streamers/'
+import {getStreamerList, streamerGroupChoices} from '../db/streamers/'
 
 const description = 'Lists supported VTuber Agencies and indies and their VTubers.'
 
