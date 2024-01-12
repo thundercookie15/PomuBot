@@ -11,7 +11,7 @@ export const official_channels = [
   },
   {
     name: 'Nijisanji',
-    ytId: 'nijisanji',
+    ytId: 'UCX7YkU9nEeaoZbkVLVajcMg',
     chName: 'にじさんじ ',
     picture:
       'https://yt3.ggpht.com/ytc/AMLnZu9bcxvdJLIwCL2qSYCIcDNmtb-HheBY10dAhuvRCg=s88-c-k-c0x00ffffff-no-rj',
