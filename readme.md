@@ -14,6 +14,7 @@ Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
 - Easy translator blacklisting system
 - Manual blacklisting system
 - Relay prechat messages up to 24 hours of initial livestream
+- Discord Native Permissions
 
 
 ## How to set up
@@ -30,7 +31,7 @@ Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
 * Rename `.env.example` to `.env`
 * Modify `src/config.ts` and replace OwnerId with your Discord ID. You can leave DevID empty, it's not required.
 * Modify `src/core/registerSlashCommands.ts` and replace client_id with the client ID of your bot.
-* Modify `src/core/registerSlashCommands.ts` and replace GUILD_ID_FOR_PERSONAL_COMMANDS with the guild ID of your server.
+* Modify `src/core/registerSlashCommands.ts` and replace GUILD_ID_FOR_PERSONAL_COMMANDS with the guild ID of your own testing server. Commands under `src/core/guildcommands` can only be run in the set guild.
 * (Optional) Replace the channel ID in `src/core/events/guildCreate.ts` and `src/core/events/guildDelete.ts` with your
   own channel ID for bot logs. 
 * (Optional) Replace the channel ID in `src/index.ts` to your own logging channel ID for bot error logging.
@@ -38,6 +39,7 @@ Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
 * Run `npm run tsc` to compile the TypeScript files.
 * Run `node build/core/registerSlashCommands.js` to register slash commands to discord.
 * Run `node build/index.js` to start the bot.
+* When the bot is invited to a server, it will automatically assign default permissions to all of it's commands. Permissions for commands can be managed by the server's administrators in the Discord server settings under the Integrations tab.
 
 
 
