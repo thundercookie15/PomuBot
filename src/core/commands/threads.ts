@@ -14,7 +14,10 @@ export const threads: Command = {
       Requires Public Threads permissions.
     `,
   },
-  slash: new SlashCommandBuilder().setName('thread').setDescription('Dead feature'),
+  slash: new SlashCommandBuilder()
+    .setName('thread')
+    .setDescription('Dead feature')
+    .setDefaultMemberPermissions(2),
   callback: (intr: CommandInteraction): void => {
     reply(
       intr,

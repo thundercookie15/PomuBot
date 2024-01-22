@@ -37,7 +37,8 @@ export const language: Command = {
     ).addSubcommand((subcommand) =>
       subcommand.setName('current')
         .setDescription('current translation language')
-    ),
+    )
+    .setDefaultMemberPermissions(2),
   callback: (intr: ChatInputCommandInteraction): void => {
     const language = intr.options.getString('language')!
     const g = getSettings(intr)

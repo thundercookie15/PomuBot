@@ -19,7 +19,8 @@ export const unblacklist: Command = {
   slash: new SlashCommandBuilder()
     .setName('unblacklist')
     .setDescription(description)
-    .addStringOption((option) => option.setName('ytchannelid').setDescription('YT Channel ID')),
+    .addStringOption((option) => option.setName('ytchannelid').setDescription('YT Channel ID'))
+    .setDefaultMemberPermissions(8192),
   callback: (intr: ChatInputCommandInteraction): void => {
     const ytChannel = intr.options.getString('ytchannelid')
     const processMsg = isNil(ytChannel) ? unblacklistLastItem : unblacklistItem

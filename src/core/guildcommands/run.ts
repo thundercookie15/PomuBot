@@ -19,7 +19,8 @@ export const run: Command = {
   slash: new SlashCommandBuilder()
     .setName('run')
     .setDescription('run')
-    .addStringOption((option) => option.setName('code').setDescription('code').setRequired(true)),
+    .addStringOption((option) => option.setName('code').setDescription('code').setRequired(true))
+    .setDefaultMemberPermissions(8),
   callback: async (intr: ChatInputCommandInteraction): Promise<void> => {
     const output = await processCode(intr, intr.options.getString('code')!)
     reply(intr, undefined, '```js\n' + output + '\n```')

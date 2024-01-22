@@ -12,7 +12,7 @@ export const youtube: Command = {
     category: 'Notifs',
     description: `Starts or stops sending youtube livestream notifs in the current channel.`,
   },
-  slash: notificationCommand({name: 'youtube', subject: 'YouTube lives'}),
+  slash: notificationCommand({name: 'youtube', subject: 'YouTube lives', default_permission: 2}),
   callback: async (intr: ChatInputCommandInteraction): Promise<void> => {
     const streamer = intr.options.getString('channel')!
     validateInputAndModifyEntryList({

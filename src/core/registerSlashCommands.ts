@@ -1,11 +1,12 @@
 const {REST} = require('@discordjs/rest')
 const {Routes} = require('discord-api-types/v10');
-import {loadAllCommands} from '../helpers/discord'
+import {loadAllCommands, loadAllGuildCommands} from '../helpers/discord'
 import * as dotenv from 'dotenv'
 
 dotenv.config({path: __dirname + '/../../.env'})
 
 const commands = loadAllCommands()
+const guildCommands = loadAllGuildCommands()
 
 const clientId = 'BOT_CLIENT_ID'
 
@@ -24,6 +25,13 @@ const rest = new REST({version: '10'}).setToken(process.env.DISCORD_PROD_TOKEN)
     console.log(body)
     console.log('====================')
     await rest.put(Routes.applicationCommands(clientId), {body})
+
+    const guildBody = [...guildCommands.map((v, k) => {
+      console.log(`jsonning ${k}`)
+      return v.slash.toJSON()
+    }).toList().toArray()]
+
+    await rest.put(Routes.applicationGuildCommands(clientId, 'GUILD_ID_FOR_PERSONAL_COMMANDS'), {body: guildBody})
 
     console.log('Successfully reloaded application (/) commands.')
   } catch (error) {

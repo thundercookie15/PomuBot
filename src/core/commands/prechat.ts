@@ -13,7 +13,10 @@ export const prechat: Command = {
     category: 'Relay',
     description,
   },
-  slash: new SlashCommandBuilder().setName('prechat').setDescription(description),
+  slash: new SlashCommandBuilder()
+    .setName('prechat')
+    .setDescription(description)
+    .setDefaultMemberPermissions(2),
   callback: (intr): void => {
     toggleSetting({
       intr,

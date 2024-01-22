@@ -12,7 +12,10 @@ export const showchat: Command = {
     category: 'Relay',
     description
   },
-  slash: new SlashCommandBuilder().setName('showchat').setDescription(description),
+  slash: new SlashCommandBuilder()
+    .setName('showchat')
+    .setDescription(description)
+    .setDefaultMemberPermissions(2),
   callback: (intr: CommandInteraction): void => {
     toggleSetting({
       intr,

@@ -18,6 +18,7 @@ export const admins: Command = {
     name: 'admins',
     description,
     roleListName: 'the bot admin list',
+    default_permission: 2
   }),
   callback: (intr: ChatInputCommandInteraction): void => {
     modifyRoleList({

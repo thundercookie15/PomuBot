@@ -30,6 +30,7 @@ Code is ugly, will I clean it up? Idk, maybe. Does it work, yea.
 * Rename `.env.example` to `.env`
 * Modify `src/config.ts` and replace OwnerId with your Discord ID. You can leave DevID empty, it's not required.
 * Modify `src/core/registerSlashCommands.ts` and replace client_id with the client ID of your bot.
+* Modify `src/core/registerSlashCommands.ts` and replace GUILD_ID_FOR_PERSONAL_COMMANDS with the guild ID of your server.
 * (Optional) Replace the channel ID in `src/core/events/guildCreate.ts` and `src/core/events/guildDelete.ts` with your
   own channel ID for bot logs. 
 * (Optional) Replace the channel ID in `src/index.ts` to your own logging channel ID for bot error logging.

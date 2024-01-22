@@ -15,7 +15,10 @@ export const deepl: Command = {
     category: 'Relay',
     description,
   },
-  slash: new SlashCommandBuilder().setName('deepl').setDescription(description),
+  slash: new SlashCommandBuilder()
+    .setName('deepl')
+    .setDescription(description)
+    .setDefaultMemberPermissions(2),
   callback: (intr: CommandInteraction): void => {
     toggleSetting({
       intr,

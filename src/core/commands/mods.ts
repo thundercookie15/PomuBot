@@ -13,7 +13,7 @@ export const mods: Command = {
     category: 'Relay',
     description,
   },
-  slash: new SlashCommandBuilder().setName('mods').setDescription(description),
+  slash: new SlashCommandBuilder().setName('mods').setDescription(description).setDefaultMemberPermissions(2),
   callback: (intr: CommandInteraction): void => {
     toggleSetting({
       intr,

@@ -13,7 +13,6 @@ import {
   ThreadChannel,
   CommandInteraction,
   GuildMemberRoleManager,
-  Permissions,
 } from 'discord.js'
 import {client} from '../../core'
 

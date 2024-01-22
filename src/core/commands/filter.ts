@@ -33,7 +33,8 @@ export const filter: Command = {
         .addStringOption((option) =>
           option.setName('pattern').setDescription('pattern').setRequired(true),
         ),
-    ),
+    )
+    .setDefaultMemberPermissions(2),
   callback: (intr: ChatInputCommandInteraction): void => {
     const str = intr.options.getString('pattern')!
     const g = getSettings(intr)

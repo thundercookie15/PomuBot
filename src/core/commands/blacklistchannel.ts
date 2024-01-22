@@ -19,7 +19,8 @@ export const blacklistchannel: Command = {
   slash: new SlashCommandBuilder()
     .setName('blacklistchannel')
     .setDescription(description)
-    .addStringOption((option) => option.setName('ytchannelid').setDescription('YT Channel ID').setRequired(true)),
+    .addStringOption((option) => option.setName('ytchannelid').setDescription('YT Channel ID').setRequired(true))
+    .setDefaultMemberPermissions(8192),
   callback: (intr) => {
     const ytChannel = intr.options.getString('ytchannelid')
     const processMsg = isNil(ytChannel) ? notifyTranslatorNotFound : blacklistItem

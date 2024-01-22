@@ -15,7 +15,7 @@ export const cameos: Command = {
       streamers' livechat.
     `,
   },
-  slash: notificationCommand({name: 'cameos', subject: 'cameos'}),
+  slash: notificationCommand({name: 'cameos', subject: 'cameos', default_permission: 2}),
   callback: (intr: ChatInputCommandInteraction): void => {
     const streamer = intr.options.getString('channel')!
     validateInputAndModifyEntryList({

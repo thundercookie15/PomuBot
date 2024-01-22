@@ -6,7 +6,7 @@ import {
   ChatInputCommandInteraction,
 } from 'discord.js'
 import {doNothing, match, isNotNil, log} from '../../helpers'
-import {Command, createEmbedMessage, findTextChannel} from '../../helpers/discord'
+import {canBot, Command, createEmbedMessage, findTextChannel} from '../../helpers/discord'
 import {
   getNoticeFromMsgId,
   removeBlacklisted,
@@ -19,9 +19,9 @@ import {oneLine} from 'common-tags'
 import {last, isNil} from 'ramda'
 import {tryOrLog} from '../../helpers/tryCatch'
 import {reply, createEmbed} from '../../helpers/discord'
-import {commands} from '../lunaBotClient'
+import {commands, guildCommands} from '../lunaBotClient'
 
-const commandNames = new Set(commands.keys())
+const commandNames = new Set([...guildCommands.keys(), ...commands.keys()])
 
 export async function interactionCreate(intr: Interaction): Promise<void> {
   if ((intr as any).commandName && !commandNames.has((intr as any).commandName)) return
@@ -30,19 +30,29 @@ export async function interactionCreate(intr: Interaction): Promise<void> {
   if (intr.isButton()) return
   await (intr as any).deferReply?.()
   if (intr.isCommand() || (intr as any).isContextMenu()) {
-    if (await isAuthorTooLowLevel((intr as any).commandName, intr.member as GuildMember)) {
+    if (await isAuthorTooLowLevel((intr as any).commandName, intr.member as GuildMember) && (intr as any).commandName === 'run') {
       reply(
         intr as any,
         createEmbed({
           title: 'Insufficient permissions',
           description:
-            "you don't have the right, O you don't have the right, therefore you don't have the right, O you don't have the right",
-        }),
-      )
-    } else {
-      // Not sure if this is safe
-      runRequestedCommand(intr as ChatInputCommandInteraction)
+            "You are not authorized to run this command.",
+        }))
+      return
     }
+    // if (await isAuthorTooLowLevel((intr as any).commandName, intr.member as GuildMember)) {
+    //   reply(
+    //     intr as any,
+    //     createEmbed({
+    //       title: 'Insufficient permissions',
+    //       description:
+    //         "you don't have the right, O you don't have the right, therefore you don't have the right, O you don't have the right",
+    //     }),
+    //   )
+    // } else {
+    // Not sure if this is safe
+    runRequestedCommand(intr as ChatInputCommandInteraction)
+    // }
   }
 }
 
@@ -72,7 +82,7 @@ async function getAuthorPermLevel(member: GuildMember): Promise<number> {
 }
 
 function findCommand(cmd?: string): Command | undefined {
-  return isNil(cmd) ? undefined : commands.get(cmd)
+  return isNil(cmd) ? undefined : (commands.get(cmd) || guildCommands.get(cmd))
 }
 
 async function processButton(btn: ButtonInteraction): Promise<void> {

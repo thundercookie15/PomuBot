@@ -15,7 +15,7 @@ export const relay: Command = {
       streamer messages), in the current Discord channel.
     `,
   },
-  slash: notificationCommand({name: 'relay', subject: 'start of TL relays'}),
+  slash: notificationCommand({name: 'relay', subject: 'start of TL relays', default_permission: 2}),
   callback: (intr: ChatInputCommandInteraction): void => {
     const streamer = intr.options.getString('channel')!
     validateInputAndModifyEntryList({

@@ -1,11 +1,11 @@
 import {SlashCommandBuilder, SlashCommandStringOption} from '@discordjs/builders'
-
-// import { streamers } from '../../core/db/streamers'
+import {Permissions} from "discord.js";
 
 interface RoleListCommand {
   name: string
   description: string
   roleListName: string
+  default_permission: bigint | Permissions | number | null | undefined | string
 }
 
 export const roleListCommand = (opts: RoleListCommand) =>
@@ -28,6 +28,7 @@ export const roleListCommand = (opts: RoleListCommand) =>
           option.setName('role').setDescription('The role').setRequired(true),
         ),
     )
+    .setDefaultMemberPermissions(opts.default_permission)
 
 export const channelOption = (option: SlashCommandStringOption) =>
   option
@@ -39,6 +40,7 @@ export const channelOption = (option: SlashCommandStringOption) =>
 interface NotificationCommand {
   name: string
   subject: string
+  default_permission: bigint | Permissions | number | null | undefined | string
 }
 
 export const notificationCommand = (opts: NotificationCommand) =>
@@ -75,3 +77,4 @@ export const notificationCommand = (opts: NotificationCommand) =>
         .setName('viewcurrent')
         .setDescription(`View currently subscribed`),
     )
+    .setDefaultMemberPermissions(opts.default_permission)

@@ -14,7 +14,10 @@ export const Blacklist: Command = {
     category: 'Relay',
     description: oneLine`Blacklists author`,
   },
-  slash: new ContextMenuCommandBuilder().setName('Blacklist').setType(3), // message
+  slash: new ContextMenuCommandBuilder()
+    .setName('Blacklist')
+    .setType(3)
+    .setDefaultMemberPermissions(8192), // message
   callback: async (intr_: CommandInteraction): Promise<void> => {
     // shitty hack because i suck
     const intr = intr_ as ContextMenuCommandInteraction

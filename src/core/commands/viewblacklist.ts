@@ -13,7 +13,10 @@ export const viewblacklist: Command = {
     category: 'Relay',
     description,
   },
-  slash: new SlashCommandBuilder().setName('viewblacklist').setDescription(description),
+  slash: new SlashCommandBuilder()
+    .setName('viewblacklist')
+    .setDescription(description)
+    .setDefaultMemberPermissions(8192),
   callback: async (intr: CommandInteraction): Promise<void> => {
     showBlacklist(intr)
   },

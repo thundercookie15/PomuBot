@@ -22,6 +22,10 @@ export function loadAllCommands(): ImmutableMap<CommandName, Command> {
   return loadAll('commands')
 }
 
+export function loadAllGuildCommands(): ImmutableMap<CommandName, Command> {
+  return loadAll('guildcommands')
+}
+
 export function loadAllEvents(): ImmutableMap<EventName, BotEvent> {
   return loadAll('events')
 }

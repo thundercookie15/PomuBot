@@ -18,6 +18,7 @@ export const blacklisters: Command = {
     name: 'blacklisters',
     description,
     roleListName: 'the bot blacklister list',
+    default_permission: 2
   }),
   callback: (intr: ChatInputCommandInteraction): void => {
     modifyRoleList({
