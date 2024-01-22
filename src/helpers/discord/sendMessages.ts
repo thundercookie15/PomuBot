@@ -27,7 +27,6 @@ export async function reply(
   text?: string,
   file?: AttachmentBuilder,
 ): Promise<Message | Message[] | undefined | void> {
-  if (!canBot('SendMessages', msg.channel)) return
   const replyFn = msg instanceof Message ? msg.reply.bind(msg) : msg.editReply.bind(msg)
   const contextMenuIntrPayload = {
     ...(embed ? {embeds: isArray(embed) ? embed : [embed]} : {}),
