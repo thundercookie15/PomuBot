@@ -17,7 +17,7 @@ export const logchannel: Command = {
     .setName('logchannel')
     .setDescription(description)
     .addChannelOption((option) => option.setName('channel').setDescription('discord channel'))
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: async (intr: ChatInputCommandInteraction): Promise<void> => {
     const channel = intr.options.getChannel('channel')
     // const channelMention = intr.options.getChannel('channel')

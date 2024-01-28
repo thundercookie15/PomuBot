@@ -13,9 +13,11 @@ export const language: Command = {
   },
   help: {
     category: 'Relay',
-    description: oneLine`
-        Sets the language to relay translations for.
-        This will also change the language DeepL will automatically translate to.`,
+    description:
+    oneLine`This command is not used for now.`
+      // oneLine`
+      //   Sets the language to relay translations for.
+      //   This will also change the language DeepL will automatically translate to.`,
   },
   slash: new SlashCommandBuilder()
     .setName('language')
@@ -38,7 +40,7 @@ export const language: Command = {
       subcommand.setName('current')
         .setDescription('current translation language')
     )
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: (intr: ChatInputCommandInteraction): void => {
     const language = intr.options.getString('language')!
     const g = getSettings(intr)

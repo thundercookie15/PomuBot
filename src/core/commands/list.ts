@@ -13,7 +13,7 @@ export const list: Command = {
     category: 'General',
     description: 'Lists supported YT channels.',
   },
-  slash: new SlashCommandBuilder().setName('list').setDescription(description).setDefaultMemberPermissions(2)
+  slash: new SlashCommandBuilder().setName('list').setDescription(description).setDefaultMemberPermissions(8192)
     .addStringOption((option) => option.setName('group').setDescription('VTuber Agency').setChoices(
       ...streamerGroupChoices.map((group) => ({name: group.name, value: group.value}))
     ).setRequired(false)),

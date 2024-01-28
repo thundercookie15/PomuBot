@@ -15,7 +15,7 @@ export const gossip: Command = {
       streamers' livechat (includes translations and streamer comments).
     `,
   },
-  slash: notificationCommand({name: 'gossip', subject: 'gossip', default_permission: 2}),
+  slash: notificationCommand({name: 'gossip', subject: 'gossip', default_permission: 8192}),
   callback: (intr: ChatInputCommandInteraction) => {
     const streamer = intr.options.getString('channel')!
     validateInputAndModifyEntryList({

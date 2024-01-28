@@ -18,7 +18,7 @@ export const deepl: Command = {
   slash: new SlashCommandBuilder()
     .setName('deepl')
     .setDescription(description)
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: (intr: CommandInteraction): void => {
     toggleSetting({
       intr,

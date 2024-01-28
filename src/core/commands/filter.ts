@@ -34,7 +34,7 @@ export const filter: Command = {
           option.setName('pattern').setDescription('pattern').setRequired(true),
         ),
     )
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: (intr: ChatInputCommandInteraction): void => {
     const str = intr.options.getString('pattern')!
     const g = getSettings(intr)

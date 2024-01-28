@@ -17,7 +17,7 @@ export const threads: Command = {
   slash: new SlashCommandBuilder()
     .setName('thread')
     .setDescription('Dead feature')
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: (intr: CommandInteraction): void => {
     reply(
       intr,

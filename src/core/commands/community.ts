@@ -12,7 +12,7 @@ export const community: Command = {
     category: 'Notifs',
     description: `Starts or stops sending community post notifs in the current channel.`,
   },
-  slash: notificationCommand({name: 'community', subject: 'community posts', default_permission: 2}),
+  slash: notificationCommand({name: 'community', subject: 'community posts', default_permission: 8192}),
   callback: (intr: ChatInputCommandInteraction): void => {
     const streamer = intr.options.getString('channel')!
     validateInputAndModifyEntryList({

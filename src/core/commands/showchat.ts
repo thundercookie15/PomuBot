@@ -15,7 +15,7 @@ export const showchat: Command = {
   slash: new SlashCommandBuilder()
     .setName('showchat')
     .setDescription(description)
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: (intr: CommandInteraction): void => {
     toggleSetting({
       intr,

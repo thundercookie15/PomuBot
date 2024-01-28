@@ -12,7 +12,7 @@ export const twitcast: Command = {
     category: 'Notifs',
     description: 'Starts or stops sending twitcasting livestream notifs in the current channel.',
   },
-  slash: notificationCommand({name: 'twitcast', subject: 'twitcasting streams', default_permission: 2}),
+  slash: notificationCommand({name: 'twitcast', subject: 'twitcasting streams', default_permission: 8192}),
   callback: async (intr: ChatInputCommandInteraction): Promise<void> => {
     const streamer = intr.options.getString('channel')!
     validateInputAndModifyEntryList({

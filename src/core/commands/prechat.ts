@@ -16,7 +16,7 @@ export const prechat: Command = {
   slash: new SlashCommandBuilder()
     .setName('prechat')
     .setDescription(description)
-    .setDefaultMemberPermissions(2),
+    .setDefaultMemberPermissions(8192),
   callback: (intr): void => {
     toggleSetting({
       intr,
