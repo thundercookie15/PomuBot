@@ -1,7 +1,13 @@
 import {DexFrame, isPublic, VideoId, YouTubeChannelId} from '../holodex/frames'
 import {findTextChannel, send} from '../../helpers/discord'
 import {Snowflake, TextChannel, ThreadChannel} from 'discord.js'
-import {addToBotRelayHistory, addToGuildRelayHistory, getAllSettings, getGuildData,} from '../../core/db/functions'
+import {
+  addToBotRelayHistory,
+  addToGuildRelayHistory,
+  getAllSettings,
+  getGuildData,
+  getSubbedGuilds,
+} from '../../core/db/functions'
 import {GuildSettings, WatchFeature, WatchFeatureSettings} from '../../core/db/models'
 import {retryIfStillUpThenPostLog, sendAndForgetHistory} from './closeHandler'
 import {logCommentData} from './logging'
@@ -24,6 +30,7 @@ import {lessThanOneHourStartDifference} from "./chatProcesses";
 if (isMainThread)
   frameEmitter.on('frame', (frame: DexFrame) => {
     if (isPublic(frame)) {
+      if (getSubbedGuilds(frame.channel.id, 'relay').length === 0) return
       if (frame.status === 'live' || frame.status === "upcoming" && isPublic(frame)) {
         setupRelayMasterchat(frame, true)
         // setupLive(frame, true)
