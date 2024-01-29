@@ -1,0 +1,47 @@
+export const fsp = [
+  {
+    name: 'Rosco Graves',
+    ytId: 'UCsQqk4cn8pljUeadYbUVgyg',
+    chName: 'Rosco Graves【FIRST STAGE PRODUCTION EN】',
+    picture: '',
+    twitter: 'rosco_graves',
+    groups: ['First Stage Production'],
+    aliases: ['Rosco'],
+  },
+  {
+    name: 'Gale Galleon',
+    ytId: 'UCxerQlE0t1yY4bqeK5ldM9A',
+    chName: 'Gale Galleon【FIRST STAGE PRODUCTION EN】',
+    picture: '',
+    twitter: 'GaleGalleon',
+    groups: ['First Stage Production'],
+    aliases: ['Gale'],
+  },
+  {
+    name: 'Zander Netherbrand',
+    ytId: 'UC1ZRXoTQUwZtKnpOfJwGNPw',
+    chName: 'Zander Netherbrand【FIRST STAGE PRODUCTION EN】',
+    picture: '',
+    twitter: 'ZanNetherbrand',
+    groups: ['First Stage Production'],
+    aliases: ['Zander'],
+  },
+  {
+    name: 'Lucien Lunaris',
+    ytId: 'UCFwcEIsjvi9XEvpGx6iwHpw',
+    chName: 'Lucien Lunaris【FIRST STAGE PRODUCTION EN】',
+    picture: '',
+    twitter: 'Lucienlunaris',
+    groups: ['First Stage Production'],
+    aliases: ['Lucien'],
+  },
+  {
+    name: 'Cassian Floros',
+    ytId: 'UC9mydBOLdL6-Fp61paK68Tw',
+    chName: 'Cassian Floros【FIRST STAGE PRODUCTION EN】',
+    picture: '',
+    twitter: 'CassianFloros',
+    groups: ['First Stage Production'],
+    aliases: ['Cassian'],
+  }
+] as const

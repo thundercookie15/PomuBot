@@ -98,5 +98,14 @@ export const official_channels = [
     groups: ['Group channel', 'PixelLink'],
     twitter: 'PixelLinkEN',
     aliases: [],
+  },
+  {
+    name: 'First Stage Production',
+    ytId: 'UCfm05QV1b5BP0TSS842mF7Q',
+    chName: 'FIRST STAGE PRODUCTION EN',
+    picture: '',
+    twitter: 'fsp_english',
+    groups: ['Group channel', 'First Stage Production'],
+    aliases: [],
   }
 ] as const

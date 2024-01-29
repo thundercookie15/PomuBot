@@ -291,16 +291,42 @@ function isGossip(cmt: ChatComment, stalked: Streamer, frame: DexFrame): boolean
 }
 
 function getAgencyEmote(groups: string[] | undefined): string {
-  return groups?.includes('Nijisanji EN') ? emoji.nijien :
-    groups?.includes('Nijisanji') ? emoji.niji :
-      groups?.includes('Hololive') ? emoji.holo :
-        groups?.includes('Idol') ? emoji.idol :
-          groups?.includes('VShojo') ? emoji.vshojo :
-            groups?.includes('Phase Connect') ? emoji.phaseconnect :
-              groups?.includes('PRISM Project') ? emoji.prism :
-                groups?.includes('VReverie') ? emoji.vreverie :
-                  groups?.includes('EIEN') ? emoji.eien :
-                    groups?.includes('PixelLink')? emoji.pixellink : emoji.Speaker
+  switch (true) {
+    case groups?.includes('Nijisanji EN'):
+      return emoji.nijien;
+    case groups?.includes('Nijisanji'):
+      return emoji.niji;
+    case groups?.includes('Hololive'):
+      return emoji.holo;
+    case groups?.includes('Idol'):
+      return emoji.idol;
+    case groups?.includes('VShojo'):
+      return emoji.vshojo;
+    case groups?.includes('Phase Connect'):
+      return emoji.phaseconnect;
+    case groups?.includes('PRISM Project'):
+      return emoji.prism;
+    case groups?.includes('VReverie'):
+      return emoji.vreverie;
+    case groups?.includes('EIEN'):
+      return emoji.eien;
+    case groups?.includes('PixelLink'):
+      return emoji.pixellink;
+    case groups?.includes('First Stage Production'):
+      return emoji.fsp;
+    default:
+      return emoji.Speaker;
+  }
+  // return groups?.includes('Nijisanji EN') ? emoji.nijien :
+  //   groups?.includes('Nijisanji') ? emoji.niji :
+  //     groups?.includes('Hololive') ? emoji.holo :
+  //       groups?.includes('Idol') ? emoji.idol :
+  //         groups?.includes('VShojo') ? emoji.vshojo :
+  //           groups?.includes('Phase Connect') ? emoji.phaseconnect :
+  //             groups?.includes('PRISM Project') ? emoji.prism :
+  //               groups?.includes('VReverie') ? emoji.vreverie :
+  //                 groups?.includes('EIEN') ? emoji.eien :
+  //                   groups?.includes('PixelLink')? emoji.pixellink : emoji.Speaker
 }
 
 interface RelayData {
