@@ -30,7 +30,7 @@ import {lessThanOneHourStartDifference} from "./chatProcesses";
 if (isMainThread)
   frameEmitter.on('frame', (frame: DexFrame) => {
     if (isPublic(frame)) {
-      if (getSubbedGuilds(frame.channel.id, 'relay').length === 0) return
+      // if (getSubbedGuilds(frame.channel.id, 'relay').length === 0) return
       if (frame.status === 'live' || frame.status === "upcoming" && isPublic(frame)) {
         setupRelayMasterchat(frame, true)
         // setupLive(frame, true)
