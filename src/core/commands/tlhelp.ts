@@ -74,7 +74,6 @@ function getMainHelp(categories: Set<string>, settings: GuildSettings) {
       fields: [
         ...getCategoryFields(categories),
         getSettingsField(settings),
-        getBotManagerField(settings),
       ],
     },
     true,
@@ -95,6 +94,7 @@ function getSettingsField({
                             cameos,
                             community,
                             youtube,
+                            prechat
                           }: GuildSettings): EmbedField {
   return {
     name: 'Current settings',
@@ -105,18 +105,7 @@ function getSettingsField({
       ${emoji.peek} **Gossip:** ${getWatchList('gossip', gossip)}
       :family_mmbb: **Community posts:** ${getWatchList('community', community)}
       ${emoji.yt} **YouTube lives:** ${getWatchList('youtube', youtube)}
-    `,
-  }
-}
-
-function getBotManagerField(settings: GuildSettings): EmbedField {
-  return {
-    name: 'Bot managers',
-    inline: false,
-    value: `
-      :tools: **Admins:** ${getRoleList('admins', settings)}
-      :no_entry: **Blacklisters:** ${getRoleList('blacklisters', settings)}
-      :speech_balloon: **Prechat Relays:** ${settings.prechat ? 'Enabled' : 'Disabled'}. run ${config.prefix}${prechat.slash.name}
+      :speech_balloon: **Prechat Relays:** ${prechat ? 'Enabled' : 'Disabled'}. run \`${config.prefix}prechat\` to toggle.
     `,
   }
 }
