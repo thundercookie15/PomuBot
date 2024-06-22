@@ -93,11 +93,11 @@ tldex.on('subscribeError', (msg) => {
   }
 })
 
-tldex.onAny((evtName, ...args) => {
-  // if (!evtName.includes ('/en') && evtName !== 'subscribeSuccess') {
-  // debug(evtName + ': ' + JSON.stringify(args))
-  // }
-})
+// tldex.onAny((evtName, ...args) => {
+//   // if (!evtName.includes ('/en') && evtName !== 'subscribeSuccess') {
+//   // debug(evtName + ': ' + JSON.stringify(args))
+//   // }
+// })
 
 const retries: Record<VideoId, number> = {}
 

@@ -228,7 +228,7 @@ function relayMessage({discordCh, bl, deepLTl, cmt, g, frame}: RelayData): Task 
   const commons =
     (cmt.isOwner && !cmt.body.toLowerCase().includes("hearted a super chat")) ||
     (isATl && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
-    (isStreamer(cmt.id) && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
+    ((isStreamer(cmt.id) || cmt.isV) && !isBlacklistedOrUnwanted(cmt, g, bl)) ||
     (cmt.isMod && g.modMessages && !isBlacklistedOrUnwanted(cmt, g, bl));
 
   const mustPost = prechat ? (commons && g.prechat) : commons;
@@ -260,7 +260,7 @@ function extracted(cmt: ChatComment, isATl: boolean, deepLTl: string | undefined
   const vauthor = streamersMap.get(cmt.id)
   const groups = vauthor?.groups as string[] | undefined
   const vemoji = getAgencyEmote(groups)
-  const premoji = isATl ? ':speech_balloon:' : isStreamer(cmt.id) ? vemoji : ':tools:'
+  const premoji = isATl ? ':speech_balloon:' : (isStreamer(cmt.id) || cmt.isV) ? vemoji : ':tools:'
 
   let url = '';
 
@@ -314,6 +314,8 @@ function getAgencyEmote(groups: string[] | undefined): string {
       return emoji.pixellink;
     case groups?.includes('First Stage Production'):
       return emoji.fsp;
+    case groups?.includes('V4Mirai'):
+      return emoji.v4miray;
     default:
       return emoji.Speaker;
   }

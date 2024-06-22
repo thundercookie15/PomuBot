@@ -65,9 +65,9 @@ export const holostars = [
     chName: 'astel ch.アステル',
     picture:
       'https://yt3.ggpht.com/ytc/AAUvwngMQoYWdT6G-GUOnGKmzbFoLBTdsjb2G5rS8ZbH=s800-c-k-c0x00ffffff-no-rj',
-    groups: ['Holostars 2nd Generation'],
+    groups: ['Holostars 2nd Generation', 'Hololive'],
     twitter: 'astelleda',
-    aliases: ['astel', 'アステル', 'Hololive'],
+    aliases: ['astel', 'アステル'],
   },
   {
     name: 'Aragami Oga',

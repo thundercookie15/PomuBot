@@ -672,7 +672,7 @@ export const nijisanji_jp = [
   },
   {
     name: 'Amamiya Kokoro',
-    ytId: 'UUCkIimWZ9gBJRamKF0rmPU8w',
+    ytId: 'UCkIimWZ9gBJRamKF0rmPU8w',
     chName: '天宮 こころ / Amamya Ch. ',
     picture:
       'https://yt3.ggpht.com/_hRKqRC8cwHVubZBt8Nd3M3HWse4cDQiHnJR9upHOaqtT2MlmoAfNA3t_krr-_r7kUNBJQBP=s88-c-k-c0x00ffffff-no-rj',

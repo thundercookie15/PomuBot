@@ -10,18 +10,12 @@ import {tryOrLog} from '../helpers/tryCatch'
 export function notifyDiscord(opts: NotifyOptions): void {
   const {streamer, subbedGuilds, feature} = opts
   const guilds = subbedGuilds ?? getSubbedGuilds(streamer?.name, feature)
-  if (opts.prechat) {
-    guilds.forEach((g) => {
-      if (!g.prechat) {
-        guilds.splice(guilds.indexOf(g))
-      }
-    })
-  }
   guilds.forEach((g) => notifyOneGuild(g, opts))
 }
 
 export async function notifyOneGuild(g: GuildSettings, opts: NotifyOptions): Promise<void[]> {
   const {streamer, feature, embedBody, emoji} = opts
+  if (opts.prechat && !g.prechat) return Promise.all([])
 
   const entries = g[feature].filter((ent) => ent.streamer == streamer!.name)
   const guildObj = client.guilds.cache.find((guild) => guild.id === g._id)
@@ -31,6 +25,7 @@ export async function notifyOneGuild(g: GuildSettings, opts: NotifyOptions): Pro
   return !announce
     ? Promise.all(
       entries.map(({discordCh, roleToNotify}) => {
+        if (opts.prechat && !g.prechat) return
         const ch = <TextChannel>guildObj?.channels.cache.find((ch) => ch.id === discordCh)
         const msgPromise = send(ch, {
           content: roleToNotify ? emoji + ' <@&' + roleToNotify + '>' : undefined,

@@ -1,6 +1,5 @@
 import {addNotifiedLive, addNotifiedPrechats, getNotifiedLives, getNotifiedPrechats} from '../core/db/functions'
 import {Streamer, streamers} from '../core/db/streamers'
-import {log} from '../helpers'
 import {emoji} from '../helpers/discord'
 import {notifyDiscord, NotifyOptions} from './notify'
 import {frameEmitter} from './holodex/frameEmitter'

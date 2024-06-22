@@ -57,7 +57,7 @@ export const nijisanji_en = [
       'https://yt3.ggpht.com/OLpUvHlKRG9RrHxJo_QV0OYrh_bvUPpKI-MK80f8SBA2uTmre_Kx1Gq9lZhU6rmOEYlvo33Pp3M=s88-c-k-c0x00ffffff-no-rj',
     groups: ['Nijisanji', 'Nijisanji EN', 'Nijisanji EN 2nd wave'],
     twitter: 'selen_tatsuki',
-    aliases: ['Selen', 'Salad', 'Selen Tatuski', 'Tatsuki'],
+    aliases: ['Selen', 'Selen Tatuski', 'Tatsuki'],
   },
   {
     name: 'Nina Kosaka',
@@ -358,5 +358,35 @@ export const nijisanji_en = [
     groups: ['Nijisanji', 'Nijisanji EN'],
     twitter: 'ClaudeClawmark',
     aliases: ['Claude Clawmark', 'Claude', 'Clawmark'],
+  },
+  {
+    name: 'Twisty Amanozako',
+    ytId: 'UCUI1qpjJSEbgzdlwmpdVmMw',
+    chName: 'Twisty Amanozako【NIJISANJI EN】',
+    picture:
+    '',
+    groups: ['Nijisanji', 'Nijisanji EN'],
+    twitter: 'TwistyAmanozako',
+    aliases: ['Twisty']
+  },
+  {
+    name: 'Ryoma Barrenwort',
+    ytId: 'UCIzZDiilcPv0wim_MbuizFA',
+    chName: 'Ryoma Barrenwort【NIJISANJI EN】',
+    picture:
+    '',
+    groups: ['Nijisanji', 'Nijisanji EN'],
+    twitter: 'RyomaBarrenwort',
+    aliases: ['Ryoma']
+  },
+  {
+    name: 'Klara Charmwood',
+    ytId: 'UCQYwIUCLqFoin7lHKmePjJw',
+    chName: 'Klara Charmwood【NIJISANJI EN】',
+    picture:
+    '',
+    groups: ['Nijisanji', 'Nijisanji EN'],
+    twitter: 'KlaraCharmwood',
+    aliases: ['Klara']
   }
 ] as const

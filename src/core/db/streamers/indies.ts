@@ -139,9 +139,68 @@ export const indies = [
     groups: ['indies'],
     twitter: 'amatsukauto',
     aliases: ['Amatsuka', 'Uto']
+  },
+  {
+    name: "Dokibird",
+    ytId: "UComInW10MkHJs-_vi4rHQCQ",
+    chName: "Dokibird",
+    picture: "https://cdn.discordapp.com/attachments/524898705959288833/1205581212715057273/GF51m43XgAAaSaX.png?ex=65d8e3ff&is=65c66eff&hm=dfc8a2bc675f6efabcf063a6f04c2c2cee1b6404787f2b24d8efc63649f0d3eb&",
+    groups: ["indies"],
+    twitter: "Dokibird",
+    aliases: ["jkterjter"]
+  },
+  {
+    name: 'Gumi',
+    ytId: 'UCidzkUQ_y3nvYjn7cSBK_kA',
+    chName: 'vGumiho',
+    picture: '',
+    groups: ['indies'],
+    twitter: 'vgumiho',
+    aliases: ['Gumiho', 'vGumiho']
+  },
+  {
+    name: 'rpr',
+    ytId: 'UCcMCZ0PPqw-L9rU9LWhOazA',
+    chName: 'rprxx',
+    picture: '',
+    groups: ['indies'],
+    twitter: 'rpr',
+    aliases: ['rprxx', 'rprx']
+  },
+  {
+    name: 'dtto',
+    ytId: 'UCWNVjAzZmYUni8YBXYiy01w',
+    chName: 'dtto.',
+    picture: '',
+    groups: ['indies'],
+    twitter: '_dtto_',
+    aliases: ['dttodot', 'ditto']
+  },
+  {
+    name: 'Kiyon',
+    ytId: 'UCycPDRVWCQakmKRKh6Z3Dqw',
+    chName: 'Kiyon Ch.',
+    picture: '',
+    groups: ['indies'],
+    twitter: 'KiyonVT',
+    aliases: [],
+  },
+  {
+    name: 'Mint Fantome',
+    ytId: 'UCcHHkJ98eSfa5aj0mdTwwLQ',
+    chName: 'Maid Mint Ch. ミント・ファントーム',
+    picture: '',
+    groups: ['indies'],
+    twitter: 'MintFantome',
+    aliases: ['Mint', 'Mint Maid']
+  },
+  {
+    name: 'Mintara Podcast',
+    ytId: 'UCxgMWRQYmppOrIh3_5hpq7A',
+    chName: 'Mint & Matara\'s Summer Special',
+    picture: '',
+    groups: ['indies'],
+    twitter: '',
+    aliases: ['Mintara', 'Mint & Matara\'s Summer Special', 'Mint & Matara']
   }
 ] as const
-
-
-
-

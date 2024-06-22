@@ -107,5 +107,23 @@ export const official_channels = [
     twitter: 'fsp_english',
     groups: ['Group channel', 'First Stage Production'],
     aliases: [],
+  },
+  {
+    name: 'V4Mirai',
+    ytId: 'UCffASWaVk1PFnpC-gTvuJgw',
+    chName: 'V4Mirai',
+    picture: '',
+    twitter: 'V4Mirai',
+    groups: ['Group channel', 'V4Mirai'],
+    aliases: [],
+  },
+  {
+    name: 'idol',
+    ytId: 'UCRMs0dRR4MEnCftyk6l1tvQ',
+    chName: 'idol',
+    picture: '',
+    twitter: 'idol_corp',
+    groups: ['Group channel', 'Idol'],
+    aliases: [],
   }
 ] as const

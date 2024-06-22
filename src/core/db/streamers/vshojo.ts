@@ -59,4 +59,13 @@ export const vshojo= [
     twitter: 'GeneralGEEGA',
     aliases: ['General GEEGA', 'GEEGA']
   },
+  {
+    name: 'Matara Kan',
+    ytId: 'UCxx2uRmAwkhb3QJMfLssgsw',
+    chName: 'Matara Kan',
+    picture: '',
+    groups: ['VShojo'],
+    twitter: 'MataraKan',
+    aliases: ['Matara']
+  }
 ] as const

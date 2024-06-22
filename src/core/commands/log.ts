@@ -1,4 +1,4 @@
-import {AttachmentBuilder, ChatInputCommandInteraction} from 'discord.js'
+import {ChatInputCommandInteraction} from 'discord.js'
 import {Command, createEmbedMessage, reply, send} from '../../helpers/discord'
 import {getStartTime, VideoId} from '../../modules/holodex/frames'
 import {getRelayHistory, filterAndStringifyHistory} from '../db/functions'

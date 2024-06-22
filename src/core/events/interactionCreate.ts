@@ -6,7 +6,7 @@ import {
   ChatInputCommandInteraction,
 } from 'discord.js'
 import {doNothing, match, isNotNil, log} from '../../helpers'
-import {canBot, Command, createEmbedMessage, findTextChannel} from '../../helpers/discord'
+import {Command, createEmbedMessage, findTextChannel} from '../../helpers/discord'
 import {
   getNoticeFromMsgId,
   removeBlacklisted,

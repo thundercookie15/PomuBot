@@ -1,6 +1,6 @@
 import {Guild} from 'discord.js'
 import {log} from '../../helpers'
-import {deleteGuildData, deleteGuildSettings} from '../db/functions'
+import {deleteGuildData, deleteGuildSettings, isWhitelistedServer} from '../db/functions'
 import {client} from "../lunaBotClient";
 
 export function guildDelete(guild: Guild) {

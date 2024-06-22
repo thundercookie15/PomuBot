@@ -22,8 +22,9 @@ import {hololive_en} from "./hololiveEN";
 import {hololive_id} from "./hololiveID";
 import {holostars} from "./holostars";
 import {fsp} from "./fsp";
+import {v4mirai} from "./v4mirai";
 
-export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive_en, ...hololive_id, ...hololive_jp, ...holostars, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie, ...pixellink, ...fsp] as const)
+export const streamers = StreamerArray([...eien, ...nijisanji_en, ...nijisanji_id, ...nijisanji_kr, ...nijisanji_jp, ...hololive_en, ...hololive_id, ...hololive_jp, ...holostars, ...IdolComp, ...indies, ...official_channels, ...phase_connect, ...prism_project, ...vshojo, ...vreverie, ...pixellink, ...fsp, ...v4mirai] as const)
 export const streamersMap: Map<YouTubeChannelId, Streamer> = new Map(
   streamers.map((s) => [s.ytId, s]),
 )
@@ -199,6 +200,11 @@ export const streamerGroupChoices =  [
     name: 'First Stage',
     value: 'First Stage',
     streamerGroup: fsp
+  },
+  {
+    name: 'V4Mirai',
+    value: 'V4Mirai',
+    streamerGroup: v4mirai
   }
 ]
 

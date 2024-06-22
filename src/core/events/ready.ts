@@ -7,7 +7,7 @@ import {clearOldBotData, clearOldData} from "../db/functions";
 
 export async function ready() {
   log(`${client.user!.tag} serving ${client.guilds.cache.size} servers.`)
-  client.user!.setActivity(`DAILY MAINTENANCES (DEBUGGING)`, {type: ActivityType.Playing})
+  client.user!.setActivity(`with VTubers`, {type: ActivityType.Playing})
   if (isMainThread) {
     console.log('community notifier...')
     import('../../modules/community/communityNotifier')
@@ -18,8 +18,8 @@ export async function ready() {
     console.log('chatrelayer')
     import('../../modules/livechat/chatRelayer')
 
-    setInterval(clearOldData, 24 * 60 * 60 * 100)
-    setInterval(clearOldBotData, 24 * 60 * 60 * 100)
+    setInterval(clearOldData, 86400000)
+    setInterval(clearOldBotData, 86400000)
     clearOldData()
     clearOldBotData()
   }

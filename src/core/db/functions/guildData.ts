@@ -124,7 +124,7 @@ export async function getGuildData(g: Guild | Snowflake): Promise<GuildData> {
 export async function clearOldData(): Promise<void> {
   console.log('clearing old data...')
   const now = new Date().getTime()
-  const WEEK = 7 * 24 * 60 * 60 * 1000
+  const WEEK = 604800000
   const isRecentHist = (v: RelayedComment[]) =>
     !!head(v)?.msgId && snowflakeToUnix(head(v)!.msgId!) - now < WEEK
   const isRecentK = (_: BlacklistNotice, k: Snowflake) => snowflakeToUnix(k) - now < WEEK
@@ -133,16 +133,12 @@ export async function clearOldData(): Promise<void> {
   client.guilds.cache.forEach(async (g) => {
     console.log('clearing for guild ' + g.id + ' ' + g.name)
     const guildData = await getGuildData(g)
-    const newRelayNotices = filter(guildData.relayNotices, isRecentV)
-    const newBlacklistNotices = filter(guildData.blacklistNotices, isRecentK)
-    const newRelayHistory = filter(guildData.relayHistory, isRecentHist)
+    const newRelayHistory = filter(guildData.relayHistory, (v) => v[0].absoluteTime > Date.now() - WEEK)
     console.log('finished computing new stuff')
 
     console.log('updating guild data 1/1')
-    updateGuildData(guildData._id, {
-      relayNotices: newRelayNotices,
+    await updateGuildData(guildData._id, {
       relayHistory: newRelayHistory,
-      blacklistNotices: newBlacklistNotices,
     })
     console.log('done with guild ' + g.id)
   })
