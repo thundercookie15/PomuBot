@@ -192,7 +192,7 @@ export const indies = [
     picture: '',
     groups: ['indies'],
     twitter: 'MintFantome',
-    aliases: ['Mint', 'Mint Maid']
+    aliases: ['Mint', 'Mint Maid', 'MintMaid', 'mintfantome', 'fantomemint']
   },
   {
     name: 'Mintara Podcast',
