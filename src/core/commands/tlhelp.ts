@@ -70,7 +70,7 @@ function getCategoryHelp(category: string) {
 function getMainHelp(categories: Set<string>, settings: GuildSettings) {
   return createEmbed(
     {
-      description: ':woman_fairy: I\'m Pomu! :woman_fairy:',
+      description: '**WHY?! VTUBER?!**',
       fields: [
         ...getCategoryFields(categories),
         getSettingsField(settings),
