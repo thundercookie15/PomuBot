@@ -67,5 +67,14 @@ export const vshojo= [
     groups: ['VShojo'],
     twitter: 'MataraKan',
     aliases: ['Matara']
+  },
+  {
+    name: 'kson',
+    ytId: 'UC9ruVYPv7yJmV0Rh0NKA-Lw',
+    chName: 'kson ONAIR',
+    picture: '',
+    groups: ['VShojo'],
+    twitter: 'ksonONAIR',
+    aliases: ['kson ONAIR']
   }
 ] as const
